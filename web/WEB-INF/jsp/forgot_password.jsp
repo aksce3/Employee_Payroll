@@ -1,7 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
-
 <html lang="en">
 
     <head>
@@ -51,31 +50,17 @@
                 <div class="col-sm-4 col-sm-offset-2">
                     <div class="home-wrapper">
                         <form role="form" id="register_form" class="intro-form">
-                            <h3 class="text-center"> SIGN IN</h3>
+                            <h3 class="text-center">Enter Your Email</h3>
+
+                            <p>Enter your email address below and we'll send a special reset password link to your inbox.</p>
 
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="User name" required="required">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password" required="required">
-                            </div>
-
-                            <div class="form-group">
-                                <label class="form-control">
-                                    <input type="radio" name="optradio" required="required"> Admin
-                                </label>      
-                                <label class="form-control">
-                                    <input type="radio" name="optradio" required="required"> Employee
-                                </label>
+                                <input type="email" class="form-control" placeholder="Email" required="required">
                             </div>
 
                             <div class="form-group text-center">
-                                <a href="admin.html"><button type="submit" class="btn btn-custom">submit</button></a>
+                                <button type="submit" class="btn btn-custom">Reset password</button>
                             </div>
-
-                            <div class="form-group"> 
-                                <a href="forgot_passwo`rd.do">Forgot password?</a>
-                            </div>        
                         </form>
                     </div>
                 </div>

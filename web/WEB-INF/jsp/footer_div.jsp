@@ -1,5 +1,5 @@
 <%-- 
-    Document   : footer
+    Document   : footer.jsp
     Author     : akshay
 --%>
 
@@ -13,11 +13,12 @@
         <div class="col-md-3 col-sm-6">
           <h5>Iflexion Business solutions</h5>
           <ul class="list-unstyled">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Careers</a></li>
+            <li><a href="index.do">Home</a></li>
+            <li><a href="services.do">Services</a></li>
+            <li><a href="careers">Careers</a></li>
+            <li><a href="contact.do">Contact</a></li>
+            <li><a href="about.do">About Us</a></li>
+            
           </ul>
         </div>
 
@@ -42,10 +43,10 @@
 
         <div class="col-md-3 col-sm-6">
           <h5>Contact</h5>
-          <address>
+          <address>C.G.Road 
+            <br>Ahmedabad
             <br>
-            <br>
-            <abbr title="Phone">P:</abbr> (+91) 9925152<br/>
+            <abbr title="Phone"> P:</abbr> (+91) 9925152<br/>
             E: <a href="mailto:iflexion@iflexion.com">iflexion@iflexion.com</a>
           </address>
         </div>

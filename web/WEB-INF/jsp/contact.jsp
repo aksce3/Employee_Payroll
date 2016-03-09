@@ -1,5 +1,5 @@
 <%-- 
-    Document   : services.jsp
+    Document   : contact
     Author     : akshay
 --%>
 
@@ -31,29 +31,23 @@
         <div class="clearfix"></div>
 
         <div class="container">
-      <div class="row">
-        <div class="col-sm-12 text-center">
-          <div class="home-wrapper">
-            <h1 class="animated fadeInDown wow" data-wow-delay=".1s">Developing Serious Software Solutions</h1>
-            <h4 class="page-sub-title animated fadeInDown wow" data-wow-delay=".3s">The People behind Iflexion Software solutions</h4>
-          </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <div class="home-wrapper">
+                        <h1 class="animated fadeInDown wow" data-wow-delay=".1s">Contact Us</h1>
+                        <h4 class="page-sub-title animated fadeInDown wow" data-wow-delay=".3s">The People behind Iflexion Software solutions</h4>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
     </section>
     <!-- END HOME -->
 
-    <!-- FEATURES-1 -->
-    <section class="section" id="features">
-        <%@include file="features1_div.jsp" %>
+    <!-- contact-form -->
+    <section class="section">
+        <%@include file="contactform_div.jsp" %>
     </section>
-    <!-- END FEATURES-1 -->
-
-    <!-- SERVICES -->
-    <section class="section bg-white" id="services">
-        <%@include file="services_div.jsp" %>
-    </section>
-    <!-- END SERVICES -->
+    <!-- end-contact-form -->
 
     <!-- FOOTER -->
     <footer class="section bg-gray footer">
@@ -69,4 +63,6 @@
 
 
 </html>
+
+
 

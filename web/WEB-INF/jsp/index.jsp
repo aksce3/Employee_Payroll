@@ -5,29 +5,7 @@
 
     <head>
         <meta charset="utf-8">
-       <link rel="shortcut icon" href="images/favicon.ico">
-        <title>Iflexion Software solutions</title>
-
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <link href="css/animate.css" rel="stylesheet">
-
-        <link rel="stylesheet" href="css/magnific-popup.css">
-
-        <link rel="stylesheet" type="text/css" href="css/ionicons.min.css">
-
-        <link href="css/style.css" rel="stylesheet">
-
-        <script src="js/jquery.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-
-        <script type="text/javascript" src="js/jquery.easing.1.3.min.js"></script>
-        <script src="js/SmoothScroll.js"></script>
-        <script src="js/wow.min.js"></script>
-        <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
-
-       
-        <script src="js/jquery.app.js"></script>
+        <%@include file="design_div.jsp" %>
         
     </head>
 
@@ -43,7 +21,7 @@
     <section class="home bg-dark">   
 
         <!-- menu -->
-        <%@include file="header.jsp" %>
+        <%@include file="header_div.jsp" %>
         <!--/Menu -->
 
         <div class="clearfix"></div>
@@ -85,7 +63,7 @@
                             </div>
 
                             <div class="form-group"> 
-                                <a href="forgot_passwo`rd.do">Forgot password?</a>
+                                <a href="forgot_password.do">Forgot password?</a>
                             </div>        
                         </form>
                     </div>
@@ -97,26 +75,26 @@
 
     <!-- FEATURES-1 -->
     <section class="section" id="features">
-        <%@include file="features1.jsp" %>
+        <%@include file="features1_div.jsp" %>
     </section>
     <!-- END FEATURES-1 -->
 
     <!-- SERVICES -->
     <section class="section bg-gray" id="services">
-        <%@include file="services.jsp" %>
+        <%@include file="services_div.jsp" %>
     </section>
     <!-- END SERVICES -->
 
 
     <!-- TESTIMONIALS -->
     <section class="section">
-        <%@include file="testimonials.jsp" %>
+        <%@include file="testimonials_div.jsp" %>
     </section>
     <!--END TESTIMONIALS -->
 
     <!-- FOOTER -->
     <footer class="section bg-gray footer">
-        <%@include file="footer.jsp" %>
+        <%@include file="footer_div.jsp" %>
     </footer>
     <!-- END FOOTER -->
 

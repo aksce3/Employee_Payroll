@@ -21,6 +21,10 @@
             <props>
                 <prop key="index.do">indexController</prop>
                 <prop key="forgot_password.do">forgotController</prop>
+                <prop key="services.do">servicesController</prop>
+                <prop key="careers.do">careersController</prop>
+                <prop key="contact.do">contactController</prop>
+                <prop key="about.do">aboutController</prop>
                 
             </props>
         </property>
@@ -41,6 +45,22 @@
     <bean name="forgotController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="forgot_password"/>
+    
+    <bean name="servicesController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="services"/>
+    
+    <bean name="careersController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="careers"/>
+    
+    <bean name="contactController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="contact"/>
+    
+    <bean name="aboutController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="about"/>
     
     
 

@@ -1,6 +1,5 @@
 <%-- 
-    Document   : features1
-   
+    Document   : features1.jsp
     Author     : akshay
 --%>
 

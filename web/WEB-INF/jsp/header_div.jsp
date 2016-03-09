@@ -1,12 +1,12 @@
 <%-- 
-    Document   : header
+    Document   : header.jsp
     Author     : akshay
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head></head>
+    
     <body>
        <div class="navbar navbar-custom sticky navbar-abs" role="navigation">
          <div class="container">
@@ -27,19 +27,19 @@
              <div class="navbar-collapse collapse">
                  <ul class="nav navbar-nav navbar-right"> 
                     <li>
-                       <a href="#features">Home</a>
+                       <a href="index.do">Home</a>
                     </li>
                     <li>
-                       <a href="#services">Services</a>
+                       <a href="services.do">Services</a>
                     </li>
                     <li>
-                       <a href="#services">Careers</a>
+                       <a href="careers.do">Careers</a>
                     </li>
                     <li>
-                       <a href="#screenshots">Contact</a>
+                       <a href="contact.do">Contact</a>
                     </li>
                     <li>
-                       <a href="about.html">About Us</a>
+                       <a href="about.do">About Us</a>
                     </li>
             
                 </ul>

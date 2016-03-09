@@ -1,27 +1,38 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
-
 <html lang="en">
 
     <head>
         <meta charset="utf-8">
-        <link rel="shortcut icon" href="images/favicon.ico">
+       <link rel="shortcut icon" href="images/favicon.ico">
         <title>Iflexion Software solutions</title>
-        <!-- Bootstrap core CSS -->
+
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <!-- Animate -->
+
         <link href="css/animate.css" rel="stylesheet">
-        <!-- Magnific-popup -->
+
         <link rel="stylesheet" href="css/magnific-popup.css">
-        <!-- Icon-font -->
+
         <link rel="stylesheet" type="text/css" href="css/ionicons.min.css">
-        <!-- Custom styles for this template -->
+
         <link href="css/style.css" rel="stylesheet">
+
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="js/jquery.easing.1.3.min.js"></script>
+        <script src="js/SmoothScroll.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+
+       
+        <script src="js/jquery.app.js"></script>
+        
     </head>
 
     <body>
-
+        
         <!-- Pre-loader -->
         <div class="preloader">
             <div class="status">&nbsp;</div>
@@ -109,16 +120,7 @@
     </footer>
     <!-- END FOOTER -->
 
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
-    <script type="text/javascript" src="js/jquery.easing.1.3.min.js"></script>
-    <script src="js/SmoothScroll.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
-
-    <!--common script for all pages-->
-    <script src="js/jquery.app.js"></script>
+    
 
 
 

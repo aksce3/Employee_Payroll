@@ -21,6 +21,7 @@
             <props>
                 <prop key="index.do">indexController</prop>
                 <prop key="forgot_password.do">forgotController</prop>
+                
             </props>
         </property>
     </bean>
@@ -40,6 +41,7 @@
     <bean name="forgotController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="forgot_password"/>
+    
     
 
 </beans>

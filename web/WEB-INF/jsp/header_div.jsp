@@ -18,7 +18,7 @@
                 </button>
           
                  <!-- LOGO -->
-                 <a class="navbar-brand logo" href="index.do">
+                 <a class="navbar-brand logo" href="admin.do">
                     <i class="ion-social-buffer"></i>
                     <span>Iflexion Software solutions</span>
                  </a>

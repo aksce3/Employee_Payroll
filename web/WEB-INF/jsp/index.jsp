@@ -59,7 +59,8 @@
                             </div>
 
                             <div class="form-group text-center">
-                                <a href="admin.html"><button type="submit" class="btn btn-custom">submit</button></a>
+                                <input type="button" class="btn btn-custom" value="submit" onclick="javascript:go('admin.do');">
+                                
                             </div>
 
                             <div class="form-group"> 

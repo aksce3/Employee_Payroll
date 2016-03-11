@@ -25,6 +25,8 @@
                 <prop key="careers.do">careersController</prop>
                 <prop key="contact.do">contactController</prop>
                 <prop key="about.do">aboutController</prop>
+                <prop key="admin.do">adminController</prop>
+                <prop key="add_employee.do">addemployeeController</prop>
                 
             </props>
         </property>
@@ -34,6 +36,7 @@
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"
           p:suffix=".jsp" />
+    
 
     <!--
     The index controller.
@@ -61,6 +64,14 @@
     <bean name="aboutController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="about"/>
+    
+    <bean name="adminController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="admin"/>
+    
+    <bean name="addemployeeController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="add_employee"/>
     
     
 

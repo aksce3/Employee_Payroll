@@ -11,6 +11,9 @@
         <title>Iflexion Software solutions</title>
 
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        
+        <!-- Bootstrap Form Helpers -->
+        <link href="css/bootstrap-form-helpers.min.css" rel="stylesheet" media="screen">
 
         <link href="css/animate.css" rel="stylesheet">
 
@@ -27,6 +30,11 @@
         <script src="js/SmoothScroll.js"></script>
         <script src="js/wow.min.js"></script>
         <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+        
+        <script type="text/javascript" src="js/login.js"></script>
+        
+        <!-- Bootstrap Form Helpers -->
+        <script src="../../js/"></script>
 
        
         <script src="js/jquery.app.js"></script>

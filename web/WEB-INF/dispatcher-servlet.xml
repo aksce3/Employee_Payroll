@@ -20,13 +20,13 @@
         <property name="mappings">
             <props>
                 <prop key="index.do">indexController</prop>
-                <prop key="forgot_password.do">forgotController</prop>
+                <!--<prop key="forgot_password.do">forgotController</prop>
                 <prop key="services.do">servicesController</prop>
                 <prop key="careers.do">careersController</prop>
                 <prop key="contact.do">contactController</prop>
                 <prop key="about.do">aboutController</prop>
                 <prop key="admin.do">adminController</prop>
-                <prop key="add_employee.do">addemployeeController</prop>
+                <prop key="add_employee.do">addemployeeController</prop>-->
                 
             </props>
         </property>
@@ -45,7 +45,7 @@
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index"/>
     
-    <bean name="forgotController"
+    <!--<bean name="forgotController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="forgot_password"/>
     
@@ -72,7 +72,7 @@
     <bean name="addemployeeController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="add_employee"/>
-    
+    -->
     
 
 </beans>

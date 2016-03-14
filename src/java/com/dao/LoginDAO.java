@@ -2,10 +2,12 @@
 package com.dao;
 
 import com.entity.Login;
+import java.util.List;
 import javax.annotation.Resource;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class LoginDAO {
     
-    public SessionFactory getMy_sessionfactory() {
+ /*   public SessionFactory getMy_sessionfactory() {
         return my_sessionfactory;
     }
 
@@ -38,5 +40,30 @@ public class LoginDAO {
 
         Long count = (Long) query.uniqueResult();
         return count;
-    }
+    }*/
+    
+    @Autowired
+    private SessionFactory sessionFactory;
+
+    public int findByUname(Login log) {
+        //System.out.println("Hi Dao" + loginForm.getUname());
+        //Session session = sessionFactory.getCurrentSession();
+     //   Query query =  session.getNamedQuery("Users.findByUname");
+        /*Query query =  session.getNamedQuer; 
+        query.setString("uname", loginForm.getUname());
+        query.setString("pass", loginForm.getPass());
+        
+   //     query.setString("user",loginForm.getUser());
+        
+        Login loginObj = (Login) query.uniqueResult();
+        return loginObj;*/
+        Session session = sessionFactory.getCurrentSession();
+        System.out.println("Enter into Login Dao");
+        Query query = session.createQuery("select uname , pass from Login where uname = ? , pass = ?");
+        query.setParameter("uname", log.getUname());
+        query.setParameter("pass", log.getPass());
+        List user = query.list();
+        return user.size();
+        //return (Login) sessionFactory.getCurrentSession().get(Login.class, uname);
+    }   
 }

@@ -39,7 +39,7 @@
 
                 <div class="col-sm-4 col-sm-offset-2">
                     <div class="home-wrapper">
-                        <form role="form" id="register_form" class="intro-form">
+                        <form role="form" id="register_form" class="intro-form" action="loginAdmin.do" commandName="adminLogin">
                             <h3 class="text-center"> SIGN IN</h3>
 
                             <div class="form-group">
@@ -49,17 +49,17 @@
                                 <input type="password" class="form-control" placeholder="Password" required="required">
                             </div>
 
-                            <div class="form-group">
+                        <!--    <div class="form-group">
                                 <label class="form-control">
                                     <input type="radio" name="optradio" required="required"> Admin
                                 </label>      
                                 <label class="form-control">
                                     <input type="radio" name="optradio" required="required"> Employee
                                 </label>
-                            </div>
+                            </div>  -->
 
                             <div class="form-group text-center">
-                                <input type="button" class="btn btn-custom" value="submit" onclick="javascript:go('admin.do');">
+                                <input type="submit" class="btn btn-custom" value="submit" >
                                 
                             </div>
 

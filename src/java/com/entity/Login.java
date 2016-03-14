@@ -1,4 +1,3 @@
-
 package com.entity;
 
 import javax.persistence.Column;
@@ -7,28 +6,29 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-/**
- *
- * @author akshay
+/* @author akshay
  */
 
 @Entity
-@Table(name ="employee")
-
+@Table(name = "employee")
 
 public class Login {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    
-    private int id;
-    @Column private String uname;
 
-    @Column private String pass;
+    private int id;
+    @Column
+    private String uname;
+
+    @Column
+    private String pass;
+
+    @Column
+    private String user;
 
     private Long user_count;
-    
+
     public int getId() {
         return id;
     }
@@ -49,21 +49,26 @@ public class Login {
         return pass;
     }
 
+     public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    } 
     /**
      * @param pass the pass to set
      */
     public void setPass(String pass) {
         this.pass = pass;
     }
-    
+
     public Long getUser_count() {
         return user_count;
     }
-    
+
     public void setUser_count(Long user_count) {
         this.user_count = user_count;
     }
 
-    
-    
 }

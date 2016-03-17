@@ -12,9 +12,6 @@
 
         <link href="css/bootstrap.min.css" rel="stylesheet">
         
-        <!-- Bootstrap Form Helpers -->
-        <link href="css/bootstrap-form-helpers.min.css" rel="stylesheet" media="screen">
-
         <link href="css/animate.css" rel="stylesheet">
 
         <link rel="stylesheet" href="css/magnific-popup.css">
@@ -33,8 +30,7 @@
         
         <script type="text/javascript" src="js/login.js"></script>
         
-        <!-- Bootstrap Form Helpers -->
-        <script src="../../js/"></script>
+        
 
        
         <script src="js/jquery.app.js"></script>

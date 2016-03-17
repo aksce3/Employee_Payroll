@@ -57,11 +57,11 @@ public class LoginDAO {
         
         Login loginObj = (Login) query.uniqueResult();
         return loginObj;*/
-        Session session = sessionFactory.getCurrentSession();
-        System.out.println("Enter into Login Dao");
-        Query query = session.createQuery("select uname , pass from Login where uname = ? , pass = ?");
+        Session session = this.sessionFactory.getCurrentSession();
+        System.out.println("Enter into Login Dao"+log.getUname());
+        Query query = session.createQuery("from Login where uname = ?");
         query.setParameter("uname", log.getUname());
-        query.setParameter("pass", log.getPass());
+        //query.setParameter("pass", log.getPass());
         List user = query.list();
         return user.size();
         //return (Login) sessionFactory.getCurrentSession().get(Login.class, uname);

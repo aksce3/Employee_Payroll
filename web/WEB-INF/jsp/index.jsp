@@ -5,8 +5,7 @@
 
     <head>
         <meta charset="utf-8">
-        <%@include file="design_div.jsp" %>
-        
+        <%@include file="design_div.jsp" %>   
     </head>
 
     <body>
@@ -18,7 +17,7 @@
 
 
         <!-- HOME -->
-    <section class="home bg-dark">   
+     <section class="home bg-dark">   
 
         <!-- menu -->
         <%@include file="header_div.jsp" %>
@@ -39,14 +38,15 @@
 
                 <div class="col-sm-4 col-sm-offset-2">
                     <div class="home-wrapper">
-                        <form role="form" id="register_form" class="intro-form" action="loginAdmin.do" commandName="adminLogin">
+                        
+                     <form role="form" id="register_form" class="intro-form" action="loginAdmin.do" commandName="adminLogin">  
                             <h3 class="text-center"> SIGN IN</h3>
 
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="User name" required="required">
+                                <input type="text" class="form-control" placeholder="User name" required="required" name="uname">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password" required="required">
+                                <input type="password" class="form-control" placeholder="Password" required="required" name="pass">
                             </div>
 
                         <!--    <div class="form-group">
@@ -59,7 +59,7 @@
                             </div>  -->
 
                             <div class="form-group text-center">
-                                <input type="submit" class="btn btn-custom" value="submit" >
+                                <input type="submit" class="btn btn-custom" value="submit">
                                 
                             </div>
 
@@ -100,7 +100,7 @@
     <!-- END FOOTER -->
 
     
-
+  
 
 
 </body>

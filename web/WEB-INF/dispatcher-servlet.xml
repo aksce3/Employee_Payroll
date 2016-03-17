@@ -9,28 +9,28 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
-    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+<!--    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>  -->
 
     <!--
     Most controllers will use the ControllerClassNameHandlerMapping above, but
     for the index controller we are using ParameterizableViewController, so we must
     define an explicit mapping for it.
     -->
-    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+<!--   <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
                 <prop key="index.do">indexController</prop>
-                <!--<prop key="forgot_password.do">forgotController</prop>
+                <prop key="forgot_password.do">forgotController</prop>
                 <prop key="services.do">servicesController</prop>
                 <prop key="careers.do">careersController</prop>
                 <prop key="contact.do">contactController</prop>
                 <prop key="about.do">aboutController</prop>
                 <prop key="admin.do">adminController</prop>
-                <prop key="add_employee.do">addemployeeController</prop>-->
+                <prop key="add_employee.do">addemployeeController</prop>
                 
             </props>
         </property>
-    </bean>
+    </bean>  -->
 
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
@@ -41,9 +41,9 @@
     <!--
     The index controller.
     -->
-    <bean name="indexController"
+     <!--    <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="index"/>
+          p:viewName="index"/>    -->
     
     <!--<bean name="forgotController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"

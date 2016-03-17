@@ -24,18 +24,23 @@ public class LoginController {
     
     @Autowired
     private LoginDAO logindao;
+    
+    @RequestMapping(value = "displayForm",method = RequestMethod.GET)
+       public String hellloWorld(Login ud){
+       return "index";
+       }
 
 
-    @RequestMapping(value = "/loginAdmin", method = RequestMethod.GET)
+    @RequestMapping(value = "loginAdmin", method = RequestMethod.GET)
     //public String loginSuccess(@ModelAttribute("index") Login loginObj, BindingResult result, ModelMap model) {
-        public String loginSuccess(@ModelAttribute("adminLogin") Login loginObj, ModelMap model) {
+        public String loginSuccess(@ModelAttribute("adminLogin") Login login, ModelMap model) {
         //Long count = this.logindao.validateLogin(loginObj);
-        System.out.println("Enter into Login Controller");
+        System.out.println("Enter into Login Controller" +login.getUname());
         //model.addAttribute("message1", loginObj.getUname());
         //System.out.println("result error"+result.getAllErrors());
         //System.out.println("result error count"+result.getErrorCount());
-        LoginDAO lDAO = new LoginDAO();
-        int s = lDAO.findByUname(loginObj);
+       // LoginDAO lDAO = new LoginDAO();
+        int s = logindao.findByUname(login);
        if(s!=0)
        {
         return "admin";

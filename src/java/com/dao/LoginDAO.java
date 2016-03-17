@@ -4,9 +4,11 @@ package com.dao;
 import com.entity.Login;
 import java.util.List;
 import javax.annotation.Resource;
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -59,11 +61,16 @@ public class LoginDAO {
         return loginObj;*/
         Session session = this.sessionFactory.getCurrentSession();
         System.out.println("Enter into Login Dao"+log.getUname());
-        Query query = session.createQuery("from Login where uname = ?");
-        query.setParameter("uname", log.getUname());
+        //Query query = session.createQuery("from Login where uname = ?");
+        //query.setParameter("uname", log.getUname());
         //query.setParameter("pass", log.getPass());
-        List user = query.list();
-        return user.size();
+        //List user = query.list();
+        //return user.size();
         //return (Login) sessionFactory.getCurrentSession().get(Login.class, uname);
-    }   
+        Criteria c = session.createCriteria(Login.class);
+        c.add(Restrictions.eq("uname",log.getUname())).add(Restrictions.eq("pass", log.getPass()));
+        List result = c.list();
+        int size = result.size();
+            return  size;
+    }  
 }

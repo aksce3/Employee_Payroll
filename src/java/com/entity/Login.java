@@ -15,28 +15,14 @@ import javax.persistence.Table;
 public class Login {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-
-    private int id;
-    @Column
     private String uname;
 
     @Column
     private String pass;
 
-    @Column
-    private String user;
+   
 
-    private Long user_count;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
+   
     public String getUname() {
         return uname;
     }
@@ -49,26 +35,12 @@ public class Login {
         return pass;
     }
 
-     public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    } 
-    /**
+     /**
      * @param pass the pass to set
      */
     public void setPass(String pass) {
         this.pass = pass;
     }
 
-    public Long getUser_count() {
-        return user_count;
-    }
-
-    public void setUser_count(Long user_count) {
-        this.user_count = user_count;
-    }
-
+   
 }

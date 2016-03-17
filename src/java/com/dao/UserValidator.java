@@ -24,13 +24,13 @@ public class UserValidator implements Validator {
  
    //     ValidationUtils.rejectIfEmptyOrWhitespace(errors, "user", "Empty.UsersUser");
         
-        Login user = (Login) obj;
-        System.out.println("count from validator!!!!!" + user.getUser_count());
-        if (user.getUser_count() > 0) {
+    //    Login user = (Login) obj;
+      //  System.out.println("count from validator!!!!!" + user.getUser_count());
+     //   if (user.getUser_count() > 0) {
 
-        } else {
-            errors.reject("User.Details.Mismatch");
+       // } else {
+         //   errors.reject("User.Details.Mismatch");
         }
     }
     
-}
+

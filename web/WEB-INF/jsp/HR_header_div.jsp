@@ -58,7 +58,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="index.html">Log out</a>
+                            <a href="">Log out</a>
                         </li>
 
                     </ul>

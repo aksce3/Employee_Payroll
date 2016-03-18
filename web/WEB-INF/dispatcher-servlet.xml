@@ -25,6 +25,8 @@
                 <prop key="careers.do">careersController</prop>
                 <prop key="contact.do">contactController</prop>
                 <prop key="about.do">aboutController</prop>
+                <prop key="employee.do">employeeController</prop>
+                <prop key="hr.do">hrController</prop>
                 <prop key="admin.do">adminController</prop>
                 <prop key="add_employee.do">addemployeeController</prop>
                 
@@ -65,6 +67,14 @@
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="about"/>
     
+    <bean name="employeeController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="employee"/>
+          
+    <bean name="hrController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="hr"/>      
+          
     <bean name="adminController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="admin"/>

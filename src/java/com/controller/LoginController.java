@@ -25,9 +25,9 @@ public class LoginController {
     @Autowired
     private LoginDAO logindao;
     
-    @RequestMapping(value = "displayForm",method = RequestMethod.GET)
+    @RequestMapping(value = "hr",method = RequestMethod.GET)
        public String hellloWorld(Login ud){
-       return "index";
+       return "hr";
        }
 
 
@@ -47,7 +47,7 @@ public class LoginController {
        }
        else
        {
-           return "index";
+           return "hr";
        }
         /*if (result.hasErrors()) {
             return "index";

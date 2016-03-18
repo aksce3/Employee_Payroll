@@ -18,7 +18,7 @@
                 </button>
           
                  <!-- LOGO -->
-                 <a class="navbar-brand logo" href="admin.do">
+                 <a class="navbar-brand logo" href="index.do">
                     <i class="ion-social-buffer"></i>
                     <span>Iflexion Software solutions</span>
                  </a>
@@ -29,6 +29,17 @@
                     <li>
                        <a href="index.do">Home</a>
                     </li>
+                    
+                    <li class="dropdown">
+                        <a href="index.do" data-toggle="dropdown">
+                            User Login
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu arrow">
+                            <li><a href="hr.do">HR</a></li>
+                            <li><a href="employee.do">Employee</a></li>
+                        </ul>
+                    </li> 
                     <li>
                        <a href="services.do">Services</a>
                     </li>

@@ -37,8 +37,8 @@
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <div class="home-wrapper">
-                        <h1 class="animated fadeInDown wow" data-wow-delay=".1s">HR User</h1>
-                        <h4 class="page-sub-title animated fadeInDown wow" data-wow-delay=".3s">The People behind Iflexion Software solutions</h4>
+                        <h1 class="animated fadeInDown wow" data-wow-delay=".1s">Employee Details</h1>
+                        
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 text-center">
-                <h1 class="title zoomIn animated wow" data-wow-delay=".1s">Employee Detail</h1>
+                <h1 class="title zoomIn animated wow" data-wow-delay=".1s">Basic Information</h1>
                 <hr class="hr">
             </div> 
         </div>
@@ -142,6 +142,24 @@
                                 </div>
                             </div>
                             
+                            <div class="form-group col-sm-3">
+                                <label for="mstatus" class="control-label">Blood Group</label>
+                                <select class="selectpicker show-tick form-control">
+                                    <option value=""></option>
+                                    <option value="all">All</option>
+                                    <option value="a+">A+</option>
+                                    <option value="b+">B+</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group col-sm-3">
+                                <label for="doj" class="control-label">Date Of Joining</label>
+                                <div class="input-group input-append date" id="dojPicker">
+                                    <input type="text" class="form-control" name="date" />
+                                    <span class="input-group-addon add-on">
+                                    <span class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+                            </div>
                             
                         </div>      
                     </div>   
@@ -194,8 +212,174 @@
                     </div>  
                 </form>
             </div> 
-        </div>    
-
+        </div>   
+        <br><br>
+        
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1 class="title zoomIn animated wow" data-wow-delay=".1s">Office Information</h1>
+                <hr class="hr">
+            </div> 
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12 text-left">
+                <form role="form" name="ajax-form" id="ajax-form2" action="" method="post" class="form-main" >
+                   <div class="col-xs-12">  
+                     <div class="row animated fadeInDown wow" data-wow-delay=".5s">  
+                         <div class="form-group col-sm-4">
+                                <label for="designation" class="control-label">Designation</label>
+                                <select class="selectpicker show-tick form-control">
+                                    <option value=""></option>
+                                    <option value="developer">Developer</option>
+                                    <option value="accountant">Accountant</option>
+                                    <option value="manager">Manager</option>
+                                </select>
+                         </div>
+                         
+                         <div class="form-group col-sm-4">
+                                <label for="department" class="control-label">Department</label>
+                                <select class="selectpicker show-tick form-control">
+                                    <option value=""></option>
+                                    <option value="CRM">CRM</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                         </div>
+                         
+                         <div class="form-group col-sm-4">
+                                <label for="emptype" class="control-label">Employee Type</label>
+                                <select class="selectpicker show-tick form-control">
+                                    <option value=""></option>
+                                    <option value="permanent">Permanent</option>
+                                    <option value="temporary">Temporary</option>
+                                </select>
+                         </div>
+                     </div>
+                   </div>    
+                
+                </form>
+            </div>
+        </div>
+        <br><br>
+        
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1 class="title zoomIn animated wow" data-wow-delay=".1s">Other Information</h1>
+                <hr class="hr">
+            </div> 
+        </div>
+                
+        <div class="row">
+            <div class="col-md-12 text-left">
+                <form role="form" name="ajax-form" id="ajax-form2" action="" method="post" class="form-main" >
+                   <div class="col-xs-12">  
+                     <div class="row animated fadeInDown wow" data-wow-delay=".5s">  
+                          <div class="form-group col-sm-4">
+                           <label for="panno">Pan Card Number</label>
+                           <input class="form-control" id="panno" name="panno" 
+                                  onblur="if(this.value == '') this.value='Pan Card Number'" 
+                                  onfocus="if(this.value == 'Pan Card Number') this.value=''" type="text" value="Pan Card Number">
+                           <div class="error" id="err-name" style="display: none;">Please Enter Pan Card Number</div>
+                          </div>
+                         
+                         <div class="form-group col-sm-4">
+                             <label for="panno">Include PF
+                                <input type="checkbox" name="languages[]" value="Include PF" id="javaCheckbox" class="styled" />
+                             </label>
+                             <input class="form-control" id="pf" type="text" disabled>
+                         </div>
+                         
+                          <div class="form-group col-sm-4">
+                             <label for="panno">Include ESIC
+                                <input type="checkbox" name="languages[]" value="Include PF" id="javaCheckbox" class="styled" />
+                             </label>
+                             <input class="form-control" id="pf" type="text" disabled>
+                         </div>
+                     </div>
+                   </div>    
+                
+                </form>
+            </div>
+        </div>
+        
+        <br><br>
+        
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1 class="title zoomIn animated wow" data-wow-delay=".1s">Payment Information</h1>
+                <hr class="hr">
+            </div> 
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12 text-left">
+                <form role="form" name="ajax-form" id="ajax-form3" action="" method="post" class="form-main" >
+                     <div class="col-xs-12">
+                        <div class="row animated fadeInDown wow" data-wow-delay=".5s">
+                            <div class="form-group col-sm-6">
+                                <label for="bname">Bank Name</label>
+                                <input class="form-control" id="bname" name="bname" 
+                                       onblur="if(this.value == '') this.value='Bank Name'" 
+                                       onfocus="if(this.value == 'Bank Name') this.value=''" type="texte" value="Bank Name">
+                                <div class="error" id="err-name" style="display: none;">Please Enter Bank Name</div>
+                            </div>
+                            
+                            <div class="form-group col-sm-4">
+                                <label for="acno">Account No.</label>
+                                <input class="form-control" id="bname" name="acno" 
+                                       onblur="if(this.value == '') this.value='Account No'" 
+                                       onfocus="if(this.value == 'Account No') this.value=''" type="number" value="Account No">
+                                <div class="error" id="err-name" style="display: none;">Please Enter Bank Name</div>
+                            </div>
+                            
+                            
+                        </div>   
+                    </div>  
+                    
+                    <div class="col-xs-12">
+                        <div class="row animated fadeInDown wow" data-wow-delay=".5s">
+                            
+                            <div class="form-group col-sm-4">
+                                <label for="salaryslab" class="control-label">Salary Slab</label>
+                                <select class="selectpicker show-tick form-control">
+                                    <option value=""></option>
+                                    <option value="basic salary">Basic Salary</option>
+                                    <option value="gross salary">Gross Salary</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group col-sm-4">
+                                <label for="salary">Salary</label>
+                                <input class="form-control" id="salary" name="salary" 
+                                       onblur="if(this.value == '') this.value='Salary'" 
+                                       onfocus="if(this.value == 'Salary') this.value=''" type="number" value="Salary" min="0">
+                                <div class="error" id="err-name" style="display: none;">Please Enter Salary</div>
+                            </div>
+                            
+                            <div class="form-group col-sm-4">
+                                <label for="paymentType" class="control-label">Payment Type</label>
+                                <select class="selectpicker show-tick form-control">
+                                    <option value=""></option>
+                                    <option value="cash">Cash</option>
+                                    <option value="cheque">Cheque</option>
+                                </select>
+                            </div>
+                        </div>   
+                    </div>  
+                    
+                   
+                </form> 
+            </div> 
+        </div>
+        
+        <br><br>
+        <div class="form-group text-center">
+            <input type="submit" class="btn btn-custom" value="Add">
+            <input type="submit" class="btn btn-custom" value="Update">
+            
+        </div>
+        
     </div>
 </section>
 <!-- END FEATURES-1 -->

@@ -43,12 +43,22 @@
                })
               .on('changeDate', function(e) {
               // Revalidate the date field
-              $('#eventForm').formValidation('revalidateField', 'date');
+              $('#ajax-form').formValidation('revalidateField', 'date');
           });
        });
+       </script>
        
-       
-
+       <script>
+         $(document).ready(function() {
+         $('#dojPicker')
+              .datepicker({
+               format: 'mm/dd/yyyy'
+               })
+              .on('changeDate', function(e) {
+              // Revalidate the date field
+              $('#ajax-form').formValidation('revalidateField', 'date');
+          });
+       });
        </script>
         
         

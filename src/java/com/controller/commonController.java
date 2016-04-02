@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.entity.Employee;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -39,6 +40,14 @@ public class commonController {
     public String employee() {
         return "employee";
     }
+    
+    // page opening
+    @RequestMapping(value = "add_employee")
+    public String add_employee1(Employee emp){
+        return "add_employee";
+    }
+    
+    // for form redirectin
     
     
 }    

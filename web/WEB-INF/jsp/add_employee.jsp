@@ -59,11 +59,11 @@
         <div class="row">
             <div class="col-md-12 text-left">
                 <form role="form" name="ajax-form" id="ajax-form" action="" method="post" class="form-main" >
-                  <div class="col-xs-12">  
+                    <div class="col-xs-12">  
                     <div class="row animated fadeInDown wow" data-wow-delay=".5s">       
                         <div class="form-group col-sm-4">
                            <label for="name2">First Name</label>
-                           <input class="form-control" id="name2" name="fname" 
+                           <input class="form-control" id="fname" name="fname" 
                                   onblur="if(this.value == '') this.value='First Name'" 
                                   onfocus="if(this.value == 'First Name') this.value=''" type="text" value="First Name">
                            <div class="error" id="err-name" style="display: none;">Please Enter First Name</div>
@@ -71,7 +71,7 @@
                         
                         <div class="form-group col-sm-4">
                             <label for="name2">Middle Name</label>
-                            <input class="form-control" id="name2" name="mname" 
+                            <input class="form-control" id="mname" name="mname" 
                                   onblur="if(this.value == '') this.value='Middle Name'" 
                                   onfocus="if(this.value == 'Middle Name') this.value=''" type="text" value="Middle Name">
                            <div class="error" id="err-name" style="display: none;">Please Enter Middle Name</div>
@@ -79,15 +79,15 @@
                         
                         <div class="form-group col-sm-4">
                             <label for="name2">Last Name</label>
-                            <input class="form-control" id="name2" name="lname" 
+                            <input class="form-control" id="lname" name="lname" 
                                   onblur="if(this.value == '') this.value='Last Name'" 
                                   onfocus="if(this.value == 'Last Name') this.value=''" type="text" value="Last Name">
                            <div class="error" id="err-name" style="display: none;">Please Enter Last Name</div>
                         </div>
                     </div> 
-                  </div>
+                    </div>
                   
-                  <div class="col-xs-12">  
+                    <div class="col-xs-12">  
                     <div class="row animated fadeInDown wow" data-wow-delay=".5s">       
                         <div class="form-group col-sm-6">
                            <label for="email">Email Address</label>
@@ -120,51 +120,7 @@
                             </div>
                         </div>
                     </div> 
-                  </div>  
-                    
-                    <div class="col-xs-12">
-                        <div class="row animated fadeInDown wow" data-wow-delay=".5s">
-                            <div class="form-group col-sm-3">
-                                <label for="mstatus" class="control-label">Marital Status</label>
-                                <select class="selectpicker show-tick form-control">
-                                    <option value=""></option>
-                                    <option value="single">Single</option>
-                                    <option value="married">Married</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group col-sm-3">
-                                <label for="bdate" class="control-label">Birth Date</label>
-                                <div class="input-group input-append date" id="datePicker">
-                                    <input type="text" class="form-control" name="date" />
-                                    <span class="input-group-addon add-on">
-                                    <span class="glyphicon glyphicon-calendar"></span></span>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group col-sm-3">
-                                <label for="mstatus" class="control-label">Blood Group</label>
-                                <select class="selectpicker show-tick form-control">
-                                    <option value=""></option>
-                                    <option value="all">All</option>
-                                    <option value="a+">A+</option>
-                                    <option value="b+">B+</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group col-sm-3">
-                                <label for="doj" class="control-label">Date Of Joining</label>
-                                <div class="input-group input-append date" id="dojPicker">
-                                    <input type="text" class="form-control" name="date" />
-                                    <span class="input-group-addon add-on">
-                                    <span class="glyphicon glyphicon-calendar"></span></span>
-                                </div>
-                            </div>
-                            
-                        </div>      
-                    </div>   
-                    
-                  
+                    </div>  
                     
                     <div class="col-xs-12">
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">
@@ -210,24 +166,61 @@
                             </div> 
                         </div>    
                     </div>  
-                </form>
-            </div> 
-        </div>   
-        <br><br>
-        
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <h1 class="title zoomIn animated wow" data-wow-delay=".1s">Office Information</h1>
-                <hr class="hr">
-            </div> 
-        </div>
-        
-        <div class="row">
-            <div class="col-md-12 text-left">
-                <form role="form" name="ajax-form" id="ajax-form2" action="" method="post" class="form-main" >
-                   <div class="col-xs-12">  
-                     <div class="row animated fadeInDown wow" data-wow-delay=".5s">  
-                         <div class="form-group col-sm-4">
+                    
+                    <div class="col-xs-12">
+                        <div class="row animated fadeInDown wow" data-wow-delay=".5s">
+                            <div class="form-group col-sm-3">
+                                <label for="mstatus" class="control-label">Marital Status</label>
+                                <select class="selectpicker show-tick form-control">
+                                    <option value=""></option>
+                                    <option value="single">Single</option>
+                                    <option value="married">Married</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group col-sm-3">
+                                <label for="bdate" class="control-label">Birth Date</label>
+                                <div class="input-group input-append date" id="datePicker">
+                                    <input type="text" class="form-control" name="date" />
+                                    <span class="input-group-addon add-on">
+                                    <span class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group col-sm-3">
+                                <label for="mstatus" class="control-label">Blood Group</label>
+                                <select class="selectpicker show-tick form-control">
+                                    <option value=""></option>
+                                    <option value="all">All</option>
+                                    <option value="a+">A+</option>
+                                    <option value="b+">B+</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group col-sm-3">
+                                <label for="doj" class="control-label">Date Of Joining</label>
+                                <div class="input-group input-append date" id="dojPicker">
+                                    <input type="text" class="form-control" name="date" />
+                                    <span class="input-group-addon add-on">
+                                    <span class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+                            </div>
+                            
+                        </div>      
+                    </div>  
+                    
+                    <br><br>
+
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <h1 class="title zoomIn animated wow" data-wow-delay=".1s">Office Information</h1>
+                            <hr class="hr">
+                        </div> 
+                    </div>
+                    
+                    <div class="col-xs-12">  
+                        <div class="row animated fadeInDown wow" data-wow-delay=".5s">  
+                            <div class="form-group col-sm-4">
                                 <label for="designation" class="control-label">Designation</label>
                                 <select class="selectpicker show-tick form-control">
                                     <option value=""></option>
@@ -235,9 +228,9 @@
                                     <option value="accountant">Accountant</option>
                                     <option value="manager">Manager</option>
                                 </select>
-                         </div>
-                         
-                         <div class="form-group col-sm-4">
+                            </div>
+
+                            <div class="form-group col-sm-4">
                                 <label for="department" class="control-label">Department</label>
                                 <select class="selectpicker show-tick form-control">
                                     <option value=""></option>
@@ -245,36 +238,30 @@
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                 </select>
-                         </div>
-                         
-                         <div class="form-group col-sm-4">
+                            </div>
+
+                            <div class="form-group col-sm-4">
                                 <label for="emptype" class="control-label">Employee Type</label>
                                 <select class="selectpicker show-tick form-control">
                                     <option value=""></option>
                                     <option value="permanent">Permanent</option>
                                     <option value="temporary">Temporary</option>
                                 </select>
-                         </div>
-                     </div>
-                   </div>    
-                
-                </form>
-            </div>
-        </div>
-        <br><br>
-        
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <h1 class="title zoomIn animated wow" data-wow-delay=".1s">Other Information</h1>
-                <hr class="hr">
-            </div> 
-        </div>
-                
-        <div class="row">
-            <div class="col-md-12 text-left">
-                <form role="form" name="ajax-form" id="ajax-form2" action="" method="post" class="form-main" >
-                   <div class="col-xs-12">  
-                     <div class="row animated fadeInDown wow" data-wow-delay=".5s">  
+                            </div>
+                        </div>
+                    </div>  
+                    
+                    <br><br>
+
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <h1 class="title zoomIn animated wow" data-wow-delay=".1s">Other Information</h1>
+                            <hr class="hr">
+                        </div> 
+                    </div>
+                    
+                    <div class="col-xs-12">  
+                        <div class="row animated fadeInDown wow" data-wow-delay=".5s">  
                           <div class="form-group col-sm-4">
                            <label for="panno">Pan Card Number</label>
                            <input class="form-control" id="panno" name="panno" 
@@ -283,7 +270,7 @@
                            <div class="error" id="err-name" style="display: none;">Please Enter Pan Card Number</div>
                           </div>
                          
-                         <div class="form-group col-sm-4">
+                          <div class="form-group col-sm-4">
                              <label for="panno">Include PF
                                 <input type="checkbox" name="languages[]" value="Include PF" id="javaCheckbox" class="styled" />
                              </label>
@@ -296,26 +283,19 @@
                              </label>
                              <input class="form-control" id="pf" type="text" disabled>
                          </div>
-                     </div>
-                   </div>    
-                
-                </form>
-            </div>
-        </div>
-        
-        <br><br>
-        
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <h1 class="title zoomIn animated wow" data-wow-delay=".1s">Payment Information</h1>
-                <hr class="hr">
-            </div> 
-        </div>
-        
-        <div class="row">
-            <div class="col-md-12 text-left">
-                <form role="form" name="ajax-form" id="ajax-form3" action="" method="post" class="form-main" >
-                     <div class="col-xs-12">
+                        </div>
+                    </div> 
+                    
+                    <br><br>
+                    
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <h1 class="title zoomIn animated wow" data-wow-delay=".1s">Payment Information</h1>
+                            <hr class="hr">
+                        </div> 
+                    </div> 
+                    
+                    <div class="col-xs-12">
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">
                             <div class="form-group col-sm-6">
                                 <label for="bname">Bank Name</label>
@@ -335,7 +315,7 @@
                             
                             
                         </div>   
-                    </div>  
+                     </div> 
                     
                     <div class="col-xs-12">
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">
@@ -366,20 +346,18 @@
                                 </select>
                             </div>
                         </div>   
-                    </div>  
+                    </div> 
                     
-                   
-                </form> 
+                    <br><br>
+                    <div class="form-group text-center">
+                        <input type="submit" class="btn btn-custom" value="Add">
+                        <input type="submit" class="btn btn-custom" value="Update">
+
+                    </div>
+                    
+                </form>
             </div> 
-        </div>
-        
-        <br><br>
-        <div class="form-group text-center">
-            <input type="submit" class="btn btn-custom" value="Add">
-            <input type="submit" class="btn btn-custom" value="Update">
-            
-        </div>
-        
+        </div>   
     </div>
 </section>
 <!-- END FEATURES-1 -->

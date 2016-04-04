@@ -31,7 +31,7 @@
         <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
         <script type="text/javascript" src="js/addemp.js"></script>
-        <script type="text/javascript" src="js/countries.js"></script>
+        <!--<script type="text/javascript" src="js/countries.js"></script>-->
         <script src="js/datepicker.min.js"></script>
         <script src="js/bootstrap-select.min.js"></script>
         

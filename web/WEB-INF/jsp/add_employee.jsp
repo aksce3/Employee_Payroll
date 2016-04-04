@@ -13,7 +13,10 @@
     <head>
         <meta charset="utf-8">
         <%@include file="design_div.jsp" %>
-      
+      <script type= "text/javascript" src = "js/countries.js"></script>  
+                            <script >
+                                 populateCountries("country", "state"); // first parameter is id of country drop-down and second parameter is id of state drop-down
+                            </script>
     </head>
 
     <body>
@@ -60,9 +63,9 @@
             <div class="col-md-12 text-left">
                 <form role="form" name="ajax-form" id="ajax-form" action="" method="post" class="form-main" >
                     <div class="col-xs-12">  
-                    <div class="row animated fadeInDown wow" data-wow-delay=".5s">       
+                        <div class="row animated fadeInDown wow" data-wow-delay=".5s">       
                         <div class="form-group col-sm-4">
-                           <label for="name2">First Name</label>
+                           <label for="fname">First Name</label>
                            <input class="form-control" id="fname" name="fname" 
                                   onblur="if(this.value == '') this.value='First Name'" 
                                   onfocus="if(this.value == 'First Name') this.value=''" type="text" value="First Name">
@@ -70,7 +73,7 @@
                         </div>
                         
                         <div class="form-group col-sm-4">
-                            <label for="name2">Middle Name</label>
+                            <label for="mname">Middle Name</label>
                             <input class="form-control" id="mname" name="mname" 
                                   onblur="if(this.value == '') this.value='Middle Name'" 
                                   onfocus="if(this.value == 'Middle Name') this.value=''" type="text" value="Middle Name">
@@ -78,7 +81,7 @@
                         </div>
                         
                         <div class="form-group col-sm-4">
-                            <label for="name2">Last Name</label>
+                            <label for="lname">Last Name</label>
                             <input class="form-control" id="lname" name="lname" 
                                   onblur="if(this.value == '') this.value='Last Name'" 
                                   onfocus="if(this.value == 'Last Name') this.value=''" type="text" value="Last Name">
@@ -88,7 +91,7 @@
                     </div>
                   
                     <div class="col-xs-12">  
-                    <div class="row animated fadeInDown wow" data-wow-delay=".5s">       
+                        <div class="row animated fadeInDown wow" data-wow-delay=".5s">       
                         <div class="form-group col-sm-6">
                            <label for="email">Email Address</label>
                            <input class="form-control" id="email" name="email" 
@@ -98,7 +101,7 @@
                         </div>
                         
                         <div class="form-group col-sm-3">
-                            <label for="name2">Contact No</label>
+                            <label for="cno">Contact No</label>
                             <input class="form-control" id="cno" name="cno" 
                                   onblur="if(this.value == '') this.value='Contact No'" 
                                   onfocus="if(this.value == 'Contact No') this.value=''" type="number" value="Contact No">
@@ -142,12 +145,7 @@
                     
                     <div class="col-xs-12">   
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">     
-                            <script type= "text/javascript" src = "js/countries.js"></script>  
-                            <script language="javascript">
-                                 populateCountries("country", "state"); // first parameter is id of country drop-down and second parameter is id of state drop-down
-                                 populateCountries("country2");
-                                 populateCountries("country2");
-                            </script>
+                            
                             <div class="form-group col-sm-4">
                                 <label for="name2">Country</label> 
                                 <select class="form-control" id="country" name ="country"></select>
@@ -171,8 +169,8 @@
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">
                             <div class="form-group col-sm-3">
                                 <label for="mstatus" class="control-label">Marital Status</label>
-                                <select class="selectpicker show-tick form-control">
-                                    <option value=""></option>
+                                <select class="form-group" id="mstatus">
+                                    <option>Nothing Selected</option>
                                     <option value="single">Single</option>
                                     <option value="married">Married</option>
                                 </select>
@@ -188,8 +186,8 @@
                             </div>
                             
                             <div class="form-group col-sm-3">
-                                <label for="mstatus" class="control-label">Blood Group</label>
-                                <select class="selectpicker show-tick form-control">
+                                <label for="bgroup" class="control-label">Blood Group</label>
+                                <select class="selectpicker show-tick form-control" id="bgroup">
                                     <option value=""></option>
                                     <option value="all">All</option>
                                     <option value="a+">A+</option>
@@ -211,8 +209,10 @@
                     
                     <br><br>
 
-                    <div class="row">
-                        <div class="col-sm-12 text-center">
+                    
+                    <!--<div class="row">-->
+                    <div class="col-xs-12"> 
+                        <div class="row animated fadeInDown wow" data-wow-delay=".5s">
                             <h1 class="title zoomIn animated wow" data-wow-delay=".1s">Office Information</h1>
                             <hr class="hr">
                         </div> 
@@ -222,7 +222,7 @@
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">  
                             <div class="form-group col-sm-4">
                                 <label for="designation" class="control-label">Designation</label>
-                                <select class="selectpicker show-tick form-control">
+                                <select class="selectpicker show-tick form-control" id="designation">
                                     <option value=""></option>
                                     <option value="developer">Developer</option>
                                     <option value="accountant">Accountant</option>
@@ -232,7 +232,7 @@
 
                             <div class="form-group col-sm-4">
                                 <label for="department" class="control-label">Department</label>
-                                <select class="selectpicker show-tick form-control">
+                                <select class="selectpicker show-tick form-control" id="department">
                                     <option value=""></option>
                                     <option value="CRM">CRM</option>
                                     <option value="2">2</option>
@@ -242,7 +242,7 @@
 
                             <div class="form-group col-sm-4">
                                 <label for="emptype" class="control-label">Employee Type</label>
-                                <select class="selectpicker show-tick form-control">
+                                <select class="selectpicker show-tick form-control" id="emptype">
                                     <option value=""></option>
                                     <option value="permanent">Permanent</option>
                                     <option value="temporary">Temporary</option>
@@ -271,17 +271,17 @@
                           </div>
                          
                           <div class="form-group col-sm-4">
-                             <label for="panno">Include PF
+                             <label for="pf">Include PF
                                 <input type="checkbox" name="languages[]" value="Include PF" id="javaCheckbox" class="styled" />
                              </label>
                              <input class="form-control" id="pf" type="text" disabled>
                          </div>
                          
                           <div class="form-group col-sm-4">
-                             <label for="panno">Include ESIC
+                             <label for="esic">Include ESIC
                                 <input type="checkbox" name="languages[]" value="Include PF" id="javaCheckbox" class="styled" />
                              </label>
-                             <input class="form-control" id="pf" type="text" disabled>
+                             <input class="form-control" id="esic" type="text" disabled>
                          </div>
                         </div>
                     </div> 
@@ -301,19 +301,17 @@
                                 <label for="bname">Bank Name</label>
                                 <input class="form-control" id="bname" name="bname" 
                                        onblur="if(this.value == '') this.value='Bank Name'" 
-                                       onfocus="if(this.value == 'Bank Name') this.value=''" type="texte" value="Bank Name">
+                                       onfocus="if(this.value == 'Bank Name') this.value=''" type="text" value="Bank Name">
                                 <div class="error" id="err-name" style="display: none;">Please Enter Bank Name</div>
                             </div>
                             
                             <div class="form-group col-sm-4">
                                 <label for="acno">Account No.</label>
-                                <input class="form-control" id="bname" name="acno" 
+                                <input class="form-control" id="acno" name="acno" 
                                        onblur="if(this.value == '') this.value='Account No'" 
                                        onfocus="if(this.value == 'Account No') this.value=''" type="number" value="Account No">
                                 <div class="error" id="err-name" style="display: none;">Please Enter Bank Name</div>
                             </div>
-                            
-                            
                         </div>   
                      </div> 
                     
@@ -322,7 +320,7 @@
                             
                             <div class="form-group col-sm-4">
                                 <label for="salaryslab" class="control-label">Salary Slab</label>
-                                <select class="selectpicker show-tick form-control">
+                                <select class="selectpicker show-tick form-control" id="salaryslab">
                                     <option value=""></option>
                                     <option value="basic salary">Basic Salary</option>
                                     <option value="gross salary">Gross Salary</option>
@@ -338,8 +336,8 @@
                             </div>
                             
                             <div class="form-group col-sm-4">
-                                <label for="paymentType" class="control-label">Payment Type</label>
-                                <select class="selectpicker show-tick form-control">
+                                <label for="ptype" class="control-label">Payment Type</label>
+                                <select class="selectpicker show-tick form-control" id="ptype">
                                     <option value=""></option>
                                     <option value="cash">Cash</option>
                                     <option value="cheque">Cheque</option>

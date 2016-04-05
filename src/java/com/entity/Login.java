@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import org.hibernate.validator.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+import javax.validation.constraints.NotNull;
 /* @author akshay
  */
 
@@ -14,10 +17,10 @@ import javax.persistence.Table;
 
 public class Login {
 
-    @Id
+    @Id @NotEmpty
     private String uname;
 
-    @Column
+    @Column @NotNull @Size(min=3, max=8)
     private String pass;
 
    

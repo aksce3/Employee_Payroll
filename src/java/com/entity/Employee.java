@@ -8,7 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import org.apache.commons.lang.builder.ToStringBuilder;
-
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.*;
+import javax.validation.constraints.*;
 @Entity
 @Table(name = "addemp")
 
@@ -17,18 +19,17 @@ public class Employee implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column private int cno;   
-    @Column private int pincode;
-    @Column private int acno;
-    @Column private int salary;
-   
-    @Column private String fname;
-    @Column private String mname;
-    @Column private String lname;  
     
-    @Column private String email;
-    @Column private String gender;
-    @Column private String address;
+    @Column @NotEmpty private String fname;
+    @Column @NotEmpty private String mname;
+    @Column @NotEmpty private String lname; 
+    
+    @Column @Email private String email;
+    @Column @NotNull @Size(min = 10, max = 10) private int cno;  
+    @Column @NotNull private String gender;
+    
+    @Column @NotNull private int pincode;
+    @Column @NotEmpty private String address;
     
     @Column private String country;
     @Column private String state;
@@ -48,7 +49,9 @@ public class Employee implements Serializable {
     @Column private String esic;
     
     @Column private String bname;
+    @Column private int acno;
     @Column private String salaryslab;
+    @Column private int salary;
     @Column private String ptype;
     
     

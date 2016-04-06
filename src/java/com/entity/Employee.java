@@ -1,12 +1,16 @@
 package com.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Lob;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.*;
@@ -20,39 +24,46 @@ public class Employee implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     
-    @Column @NotEmpty private String fname;
-    @Column @NotEmpty private String mname;
-    @Column @NotEmpty private String lname; 
+    @Column @NotEmpty(message = "Please Enter Your First Name") private String fname;
+    @Column @NotEmpty(message = "Please Enter Your Middle Name") private String mname;
+    @Column @NotEmpty(message = "Please Enter Your Last Name") private String lname; 
     
-    @Column @Email private String email;
-    @Column @NotNull @Size(min = 10, max = 10) private int cno;  
-    @Column @NotNull private String gender;
+    @Column @Email @NotEmpty(message = "Please Enter Your Email Address") private String email;
+    @Column //@Size(min = 10, max = 10)
+    private Long cno;  
+    @Column @NotNull(message = "Gender Should not be Blank") private String gender;
     
-    @Column @NotNull private int pincode;
-    @Column @NotEmpty private String address;
+    @Column //@Size(min = 6, max=6) 
+    private Long pincode;
+    @Column @NotEmpty(message = "Address Should not be Blank") @Lob  private String address;
     
     @Column private String country;
     @Column private String state;
     @Column private String city;
     
-    @Column private String mstatus;
-    @Column private String bdate;
-    @Column private String bgroup;
-    @Column private String doj;
+    @Column @NotNull(message = "Marital Status Should not be Blank") private String mstatus;
+    @Column @Temporal(TemporalType.DATE) @NotNull(message = "Birth Date Should not be Blank") 
+    private Date bdate;
+    @Column @NotNull(message = "Blood Group Should not be Blank") private String bgroup;
+    @Column @Temporal(TemporalType.DATE) @NotNull(message = "Date of Joining Should not be Blank")
+    private Date doj;
     
-    @Column private String designation;
-    @Column private String department;
-    @Column private String emptype; 
+    @Column @NotNull(message = "Designation Should not be Blank") private String designation;
+    @Column @NotNull(message = "Department Should not be Blank") private String department;
+    @Column @NotNull(message = "Employee Type Should not be Blank") private String emptype; 
     
-    @Column private String panno;
-    @Column private String pf;
-    @Column private String esic;
-    
-    @Column private String bname;
-    @Column private int acno;
-    @Column private String salaryslab;
-    @Column private int salary;
-    @Column private String ptype;
+    @Column @NotEmpty(message = "Pan Card Number Should not be Blank") 
+    private String panno;
+    @Column @NotEmpty(message = "Designation Should not be Blank") private String pf;
+     
+    @Column(name = "bankName") @NotEmpty(message = "Bank Name Should not be Blank")
+    private String bname;
+    @Column(name = "AccountNo")  private Long acno;
+    @Column @NotEmpty(message = "Salary Slab Should not be Blank")
+    private String salaryslab;
+    @Column private double salary;
+    @Column(name = "PaymentType") @NotNull(message = "Payment Type Should not be Blank")
+    private String ptype;
     
     
 
@@ -61,11 +72,11 @@ public class Employee implements Serializable {
     
     
     
-    public Employee(int id, int cno,int pincode,int acno,int salary,
+    public Employee(int id,long cno,long pincode,long acno,double salary,
                     String fname, String mname, String lname,
                     String email,String gender,String address,
                     String country,String state,String city,
-                    String mstatus,String bdate,String bgroup,String doj,
+                    String mstatus,Date bdate,String bgroup,Date doj,
                     String designation,String department,String emptype,
                     String panno,String pf,String esic,
                     String bname,String salaryslab,String ptype){
@@ -93,7 +104,6 @@ public class Employee implements Serializable {
         this.emptype=emptype;
         this.panno=panno;
         this.pf=pf;
-        this.esic=esic;
         this.bname=bname;
         this.salaryslab=salaryslab;
         this.ptype=ptype;
@@ -152,35 +162,35 @@ public class Employee implements Serializable {
         this.gender = gender;
     }
 
-    public int getCno() {
+    public long getCno() {
         return cno;
     }
 
-    public void setCno(int cno) {
+    public void setCno(long cno) {
         this.cno = cno;
     }
 
-    public int getPincode() {
+    public long getPincode() {
         return pincode;
     }
 
-    public void setPincode(int pincode) {
+    public void setPincode(long pincode) {
         this.pincode = pincode;
     }
 
-    public int getAcno() {
+    public long getAcno() {
         return acno;
     }
 
-    public void setAcno(int acno) {
+    public void setAcno(long acno) {
         this.acno = acno;
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
 
@@ -224,13 +234,7 @@ public class Employee implements Serializable {
         this.mstatus = mstatus;
     }
 
-    public String getBdate() {
-        return bdate;
-    }
-
-    public void setBdate(String bdate) {
-        this.bdate = bdate;
-    }
+   
 
     public String getBgroup() {
         return bgroup;
@@ -240,11 +244,11 @@ public class Employee implements Serializable {
         this.bgroup = bgroup;
     }
 
-    public String getDoj() {
+    public Date getDoj() {
         return doj;
     }
 
-    public void setDoj(String doj) {
+    public void setDoj(Date doj) {
         this.doj = doj;
     }
 
@@ -289,14 +293,6 @@ public class Employee implements Serializable {
         this.pf = pf;
     }
 
-    public String getEsic() {
-        return esic;
-    }
-    
-    public void setEsic(String esic) {
-        this.esic = esic;
-    }
-
     public String getBname() {
         return bname;
     }
@@ -327,6 +323,14 @@ public class Employee implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Date getBdate() {
+        return bdate;
+    }
+
+    public void setBdate(Date bdate) {
+        this.bdate = bdate;
     }
 
     

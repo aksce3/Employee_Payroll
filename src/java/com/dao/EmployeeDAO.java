@@ -23,6 +23,7 @@ public class EmployeeDAO {
     }
     
     public int save(Employee employee){
+        System.out.println("Data coming" + employee);
        return (Integer) sessionFactory.getCurrentSession().save(employee);
     }
     

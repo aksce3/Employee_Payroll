@@ -1,10 +1,4 @@
-<%-- 
-    Document   : add_employee
-    Author     : akshay
---%>
 
-
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
@@ -61,30 +55,32 @@
 
         <div class="row">
             <div class="col-md-12 text-left">
-                <form role="form" name="ajax-form" id="ajax-form" action="saveEmployee.do" method="post" class="form-main" commandName="addEmployee">
+                <form role="form" name="ajax-form" id="ajax-form" action="updateEmployee.do" 
+                       method="post" class="form-main" commandName="editEmployee">
                     <div class="col-xs-12">  
-                        <div class="row animated fadeInDown wow" data-wow-delay=".5s">       
+                        <div class="row animated fadeInDown wow" data-wow-delay=".5s"> 
+                            
+                        <div class="form-group col-sm-4">
+                                <label for="fname">Employee Id</label>
+                                <input class="form-control" id="id" name="id" 
+                                       type="text" value="${employee.id}">
+                        </div>    
                         <div class="form-group col-sm-4">
                            <label for="fname">First Name</label>
                            <input class="form-control" id="fname" name="fname" 
-                                  onblur="if(this.value == '') this.value='First Name'" 
-                                  onfocus="if(this.value == 'First Name') this.value=''" type="text" value="First Name">
+                                   type="text" value="${employee.fname}">
                         </div>
                         
-                        <div class="form-group col-sm-4">
+                        <div class="form-group col-sm-3">
                             <label for="mname">Middle Name</label>
                             <input class="form-control" id="mname" name="mname" 
-                                  onblur="if(this.value == '') this.value='Middle Name'" 
-                                  onfocus="if(this.value == 'Middle Name') this.value=''" type="text" value="Middle Name">
-                           <div class="error" id="err-name" style="display: none;">Please Enter Middle Name</div>
+                                  type="text" value="${employee.mname}">
                         </div>
                         
                         <div class="form-group col-sm-4">
                             <label for="lname">Last Name</label>
                             <input class="form-control" id="lname" name="lname" 
-                                  onblur="if(this.value == '') this.value='Last Name'" 
-                                  onfocus="if(this.value == 'Last Name') this.value=''" type="text" value="Last Name">
-                           <div class="error" id="err-name" style="display: none;">Please Enter Last Name</div>
+                                   type="text" value="${employee.lname}">
                         </div>
                     </div> 
                     </div>
@@ -94,30 +90,26 @@
                         <div class="form-group col-sm-6">
                            <label for="email">Email Address</label>
                            <input class="form-control" id="email" name="email" 
-                                  onblur="if(this.value == '') this.value='Email Address'" 
-                                  onfocus="if(this.value == 'Email Address') this.value=''" type="email" value="Email Address">
-                           <div class="error" id="err-name" style="display: none;">Please Enter Email Address</div>
+                                  type="email" value="${employee.email}">
                         </div>
                         
                         <div class="form-group col-sm-3">
                             <label for="cno">Contact No</label>
                             <input class="form-control" id="cno" name="cno" 
-                                  onblur="if(this.value == '') this.value='Contact No'" 
-                                  onfocus="if(this.value == 'Contact No') this.value=''" type="number" value="Contact No">
-                           <div class="error" id="err-name" style="display: none;">Please Enter Contact No</div>
+                                   type="number" value="${employee.cno}">
                         </div>
                         
                         <div class="form-group col-sm-3">
                             <label for="gender" class="control-label">Gender</label>
                             <div class="btn-group" data-toggle="buttons">
                                 <label class="btn btn-default">
-                                    <input type="radio" name="gender" value="male" /> Male
+                                    <input type="radio" name="gender" value="${employee.gender}" /> Male
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="gender" value="female" /> Female
+                                    <input type="radio" name="gender" value="${employee.gender}" /> Female
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="gender" value="other" /> Other
+                                    <input type="radio" name="gender" value="${employee.gender}" /> Other
                                 </label>
                             </div>
                         </div>
@@ -129,15 +121,13 @@
                             <div class="form-group col-sm-3">
                                  <label for="pincode">Pincode</label>
                                  <input class="form-control" id="pincode" name="pincode" 
-                                  onblur="if(this.value == '') this.value='Pinocode'" 
-                                  onfocus="if(this.value == 'Pincode') this.value=''" type="number" value="Pincode">
+                                        type="number" value="${employee.pincode}">
                             </div>
                             
                             <div class="form-group col-sm-9">
                                  <label for="address">Address</label>
                                  <input class="form-control" id="address" name="address" 
-                                  onblur="if(this.value == '') this.value='Address'" 
-                                  onfocus="if(this.value == 'Address') this.value=''" type="text" value="Address">
+                                        type="text" value="${employee.address}">
                             </div>
                         </div>
                     </div>  
@@ -168,8 +158,8 @@
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">
                             <div class="form-group col-sm-3">
                                 <label for="mstatus" class="control-label">Marital Status</label>
-                                <select class="selectpicker show-tick form-control" id="mstatus" name="mstatus">
-                                    <option></option>
+                                <select class="form-group" id="mstatus">
+                                    <option>Nothing Selected</option>
                                     <option value="single">Single</option>
                                     <option value="married">Married</option>
                                 </select>
@@ -178,7 +168,7 @@
                             <div class="form-group col-sm-3">
                                 <label for="bdate" class="control-label">Birth Date</label>
                                 <div class="input-group input-append date" id="datePicker">
-                                    <input type="text" class="form-control" name="bdate" id="bdate"/>
+                                    <input type="text" class="form-control" name="date" />
                                     <span class="input-group-addon add-on">
                                     <span class="glyphicon glyphicon-calendar"></span></span>
                                 </div>
@@ -186,8 +176,8 @@
                             
                             <div class="form-group col-sm-3">
                                 <label for="bgroup" class="control-label">Blood Group</label>
-                                <select class="selectpicker show-tick form-control" id="bgroup" name="bgroup">
-                                    <option></option>
+                                <select class="selectpicker show-tick form-control" id="bgroup">
+                                    <option value=""></option>
                                     <option value="all">All</option>
                                     <option value="a+">A+</option>
                                     <option value="b+">B+</option>
@@ -197,7 +187,7 @@
                             <div class="form-group col-sm-3">
                                 <label for="doj" class="control-label">Date Of Joining</label>
                                 <div class="input-group input-append date" id="dojPicker">
-                                    <input type="text" class="form-control" name="doj" id="doj"/>
+                                    <input type="text" class="form-control" name="date" />
                                     <span class="input-group-addon add-on">
                                     <span class="glyphicon glyphicon-calendar"></span></span>
                                 </div>
@@ -221,8 +211,8 @@
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">  
                             <div class="form-group col-sm-4">
                                 <label for="designation" class="control-label">Designation</label>
-                                <select class="selectpicker show-tick form-control" id="designation" name="designation">
-                                    <option></option>
+                                <select class="selectpicker show-tick form-control" id="designation">
+                                    <option value=""></option>
                                     <option value="developer">Developer</option>
                                     <option value="accountant">Accountant</option>
                                     <option value="manager">Manager</option>
@@ -231,8 +221,8 @@
 
                             <div class="form-group col-sm-4">
                                 <label for="department" class="control-label">Department</label>
-                                <select class="selectpicker show-tick form-control" id="department" name="department">
-                                    <option></option>
+                                <select class="selectpicker show-tick form-control" id="department">
+                                    <option value=""></option>
                                     <option value="CRM">CRM</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -241,8 +231,8 @@
 
                             <div class="form-group col-sm-4">
                                 <label for="emptype" class="control-label">Employee Type</label>
-                                <select class="selectpicker show-tick form-control" id="emptype" name="emptype">
-                                    <option></option>
+                                <select class="selectpicker show-tick form-control" id="emptype">
+                                    <option value=""></option>
                                     <option value="permanent">Permanent</option>
                                     <option value="temporary">Temporary</option>
                                 </select>
@@ -313,8 +303,8 @@
                             
                             <div class="form-group col-sm-4">
                                 <label for="salaryslab" class="control-label">Salary Slab</label>
-                                <select class="selectpicker show-tick form-control" id="salaryslab" name="salaryslab">
-                                    <option></option>
+                                <select class="selectpicker show-tick form-control" id="salaryslab">
+                                    <option value=""></option>
                                     <option value="basic salary">Basic Salary</option>
                                     <option value="gross salary">Gross Salary</option>
                                 </select>
@@ -330,8 +320,8 @@
                             
                             <div class="form-group col-sm-4">
                                 <label for="ptype" class="control-label">Payment Type</label>
-                                <select class="selectpicker show-tick form-control" id="ptype" name="ptype">
-                                    <option></option>
+                                <select class="selectpicker show-tick form-control" id="ptype">
+                                    <option value=""></option>
                                     <option value="cash">Cash</option>
                                     <option value="cheque">Cheque</option>
                                 </select>
@@ -371,5 +361,6 @@
 
 
 </html>
+
 
 

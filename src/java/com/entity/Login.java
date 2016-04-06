@@ -17,10 +17,12 @@ import javax.validation.constraints.NotNull;
 
 public class Login {
 
-    @Id @NotEmpty
+    @Id 
+    @NotEmpty(message = "Enter User Name")
     private String uname;
 
     @Column @NotNull @Size(min=3, max=8)
+    
     private String pass;
 
    

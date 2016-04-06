@@ -42,10 +42,7 @@ public class commonController {
     }
     
     // page opening
-    @RequestMapping(value = "add_employee")
-    public String add_employee1(Employee emp){
-        return "add_employee";
-    }
+    
     
     // for form redirectin
     

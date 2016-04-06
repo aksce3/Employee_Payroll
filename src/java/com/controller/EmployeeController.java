@@ -21,6 +21,7 @@ public class EmployeeController {
     @Autowired
     private EmployeeDAO employeeDAO;
     
+   
     @RequestMapping("/viewAllEmployees")
     public ModelAndView getAllEmployees(){
        ModelAndView mav = new ModelAndView("showEmployees");
@@ -29,19 +30,32 @@ public class EmployeeController {
        return mav;
     }
     
-    @RequestMapping(value = "/saveEmployee", method = RequestMethod.GET)
+     @RequestMapping(value = "add_employee")
+    public String add_employee1(Employee emp){
+        return "add_employee";
+    }
+   /* @RequestMapping(value = "/saveEmployee", method = RequestMethod.GET)
     public ModelAndView newuserForm(){
        ModelAndView mav = new ModelAndView("newEmployee");
        Employee employee = new Employee();
        mav.getModelMap().put("newEmployee",employee);
        return mav;
-    }
+    }*/
     
     @RequestMapping(value = "/saveEmployee", method = RequestMethod.POST)
-    public String create(@ModelAttribute("newEmployee")Employee employee,BindingResult result,SessionStatus status){
-       employeeDAO.save(employee);
-       status.setComplete();
-       return "redirect:viewAllEmployees.do";
+    public String create(@ModelAttribute("addEmployee")Employee employee,BindingResult result,SessionStatus status){
+       
+       //status.setComplete();
+       
+       if (result.hasErrors()) {
+                return "add_employee";
+            } else {
+                //model.addAttribute("lfobj", userDetails);
+           int i = employeeDAO.save(employee);
+           System.out.println("Data Updated :"  + i) ;
+                return "redirect:hr.do";
+            }
+       
     }
     
     @RequestMapping(value = "/updateEmployee",method = RequestMethod.GET)
@@ -56,7 +70,7 @@ public class EmployeeController {
     public String update(@ModelAttribute("editEmployee") Employee employee,SessionStatus status){
         employeeDAO.update(employee);
         status.setComplete();
-        return "redirect:viewAllEmployees.do";
+        return "redirect:hr.do";
     }
     
     @RequestMapping("deleteEmployee")

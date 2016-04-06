@@ -50,15 +50,15 @@ public class LoginDAO {
     public int findByUname(Login log) {
         //System.out.println("Hi Dao" + loginForm.getUname());
         //Session session = sessionFactory.getCurrentSession();
-     //   Query query =  session.getNamedQuery("Users.findByUname");
+        //   Query query =  session.getNamedQuery("Users.findByUname");
         /*Query query =  session.getNamedQuer; 
-        query.setString("uname", loginForm.getUname());
-        query.setString("pass", loginForm.getPass());
+         query.setString("uname", loginForm.getUname());
+         query.setString("pass", loginForm.getPass());
         
-   //     query.setString("user",loginForm.getUser());
+         //     query.setString("user",loginForm.getUser());
         
-        Login loginObj = (Login) query.uniqueResult();
-        return loginObj;*/
+         Login loginObj = (Login) query.uniqueResult();
+         return loginObj;*/
         Session session = this.sessionFactory.getCurrentSession();
         System.out.println("Enter into Login Dao"+log.getUname());
         //Query query = session.createQuery("from Login where uname = ?");

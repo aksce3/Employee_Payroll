@@ -33,7 +33,7 @@
                             </a>
                             <ul class="dropdown-menu arrow">
                                 <li><a href="add_employee.do">Add Employee</a></li>
-                                <li><a href="#">Update Employee</a></li>
+                                <li><a href="viewAllEmployees.do">View Employees</a></li>
                                 <li><a href="#">Delete Employee</a></li>
                             </ul>
                         </li>

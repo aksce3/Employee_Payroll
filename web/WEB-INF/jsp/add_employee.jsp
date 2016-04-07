@@ -13,10 +13,8 @@
     <head>
         <meta charset="utf-8">
         <%@include file="design_div.jsp" %>
-        <script type= "text/javascript" src = "js/countries.js"></script>  
-        <script >
-             populateCountries("country", "state"); // first parameter is id of country drop-down and second parameter is id of state drop-down
-        </script>
+        
+        
     </head>
 
     <body>
@@ -145,22 +143,16 @@
                     <div class="col-xs-12">   
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">     
                             
-                            <div class="form-group col-sm-4">
-                                <label for="name2">Country</label> 
-                                <select class="form-control" id="country" name ="country"></select>
+                            <div class="form-group col-sm-6">
+                                <label for="country">Country</label>  
+                                <select name="country" id="countries_states1" class="form-control bfh-countries"></select>
                             </div> 
 
-                            <div class="form-group col-sm-4">
-                                <label for="name2">State</label> 
-                                <select class="form-control" id="state" name="state"></select>
+                            <div class="form-group col-sm-6">
+                                <label for="state">State</label> 
+                                <select name="state" id="countries_states_city1" class="form-control bfh-states" data-country="countries_states1"></select>
                             </div> 
 
-                            <div class="form-group col-sm-4">
-                                <label for="name2">City</label> 
-                                <select class="form-control" id="city" name="city" class="form-group">
-
-                                </select>
-                            </div> 
                         </div>    
                     </div>  
                     
@@ -168,7 +160,7 @@
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">
                             <div class="form-group col-sm-3">
                                 <label for="mstatus" class="control-label">Marital Status</label>
-                                <select class="selectpicker show-tick form-control" id="mstatus" name="mstatus">
+                                <select class="form-control bfh-selectbox" id="mstatus" name="mstatus">
                                     <option></option>
                                     <option value="single">Single</option>
                                     <option value="married">Married</option>
@@ -186,7 +178,7 @@
                             
                             <div class="form-group col-sm-3">
                                 <label for="bgroup" class="control-label">Blood Group</label>
-                                <select class="selectpicker show-tick form-control" id="bgroup" name="bgroup">
+                                <select class="form-control bfh-selectbox" id="bgroup" name="bgroup">
                                     <option></option>
                                     <option value="all">All</option>
                                     <option value="a+">A+</option>
@@ -210,7 +202,7 @@
 
                     
                     <!--<div class="row">-->
-                    <div class="col-xs-12"> 
+                    <div class="col-xs-12 text-center"> 
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">
                             <h1 class="title zoomIn animated wow" data-wow-delay=".1s">Office Information</h1>
                             <hr class="hr">
@@ -221,7 +213,7 @@
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">  
                             <div class="form-group col-sm-4">
                                 <label for="designation" class="control-label">Designation</label>
-                                <select class="selectpicker show-tick form-control" id="designation" name="designation">
+                                <select class="form-control bfh-selectbox" id="designation" name="designation">
                                     <option></option>
                                     <option value="developer">Developer</option>
                                     <option value="accountant">Accountant</option>
@@ -231,7 +223,7 @@
 
                             <div class="form-group col-sm-4">
                                 <label for="department" class="control-label">Department</label>
-                                <select class="selectpicker show-tick form-control" id="department" name="department">
+                                <select class="form-control bfh-selectbox" id="department" name="department">
                                     <option></option>
                                     <option value="CRM">CRM</option>
                                     <option value="2">2</option>
@@ -241,7 +233,7 @@
 
                             <div class="form-group col-sm-4">
                                 <label for="emptype" class="control-label">Employee Type</label>
-                                <select class="selectpicker show-tick form-control" id="emptype" name="emptype">
+                                <select class="form-control bfh-selectbox" id="emptype" name="emptype">
                                     <option></option>
                                     <option value="permanent">Permanent</option>
                                     <option value="temporary">Temporary</option>
@@ -301,8 +293,7 @@
                             <div class="form-group col-sm-4">
                                 <label for="acno">Account No.</label>
                                 <input class="form-control" id="acno" name="acno" 
-                                       onblur="if(this.value == '') this.value='Account No'" 
-                                       onfocus="if(this.value == 'Account No') this.value=''" type="number" value="Account No">
+                                       type="number" value="Account No">
                                 <div class="error" id="err-name" style="display: none;">Please Enter Bank Name</div>
                             </div>
                         </div>   
@@ -342,8 +333,6 @@
                     <br><br>
                     <div class="form-group text-center">
                         <input type="submit" class="btn btn-custom" value="Add">
-                        <input type="submit" class="btn btn-custom" value="Update">
-
                     </div>
                     
                 </form>

@@ -24,13 +24,13 @@ public class EmployeeController {
    
     @RequestMapping("/viewAllEmployees")
     public ModelAndView getAllEmployees(){
-       ModelAndView mav = new ModelAndView("showEmployees");
+       ModelAndView mav = new ModelAndView("view_employee");
        List<Employee> employees = employeeDAO.getEmployees();
-       mav.addObject("SEARCH_EMPLOYEES_RESULTS_KEY",employees);
+       mav.addObject("employee",employees);
        return mav;
     }
     
-     @RequestMapping(value = "add_employee")
+    @RequestMapping(value = "add_employee")
     public String add_employee1(Employee emp){
         return "add_employee";
     }
@@ -58,19 +58,32 @@ public class EmployeeController {
        
     }
     
-    @RequestMapping(value = "/updateEmployee",method = RequestMethod.GET)
+   /* @RequestMapping(value = "/updateEmployee",method = RequestMethod.GET)
     public ModelAndView edit(@RequestParam("id")Integer id){
        ModelAndView mav = new ModelAndView("editEmployee");
        Employee employee = employeeDAO.getById(id);
        mav.addObject("editEmployee",employee);
        return mav;
+    } */
+    
+    @RequestMapping(value = "edit_employee")
+    public String edit_employee1(Employee emp){
+        return "edit_employee";
     }
     
     @RequestMapping(value = "/updateEmployee",method = RequestMethod.POST)
-    public String update(@ModelAttribute("editEmployee") Employee employee,SessionStatus status){
-        employeeDAO.update(employee);
-        status.setComplete();
-        return "redirect:hr.do";
+    public String update(Employee employee,BindingResult result,SessionStatus status){
+      //  employeeDAO.update(employee);
+      //  status.setComplete();
+      //  return "redirect:hr.do";
+      if (result.hasErrors()) {
+                return "edit_employee";
+            } else {
+                //model.addAttribute("lfobj", userDetails);
+                employeeDAO.update(employee);
+                return "redirect:iewAllEmployees.do";
+            }  
+        
     }
     
     @RequestMapping("deleteEmployee")

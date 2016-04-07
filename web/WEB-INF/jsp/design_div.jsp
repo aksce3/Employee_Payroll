@@ -19,6 +19,8 @@
         <link rel="stylesheet" href="css/datepicker.min.css">
         <link rel="stylesheet" href="css/datepicker3.min.css">
         <link rel="stylesheet" href="css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="css/bootstrap-formhelpers.min.css">
+        <link rel="stylesheet" href="css/bootstrap-table.min.css">
 
          
         
@@ -31,9 +33,15 @@
         <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
         <script type="text/javascript" src="js/addemp.js"></script>
-        <!--<script type="text/javascript" src="js/countries.js"></script>-->
+        <script type="text/javascript" src="js/countries.js"></script>
         <script src="js/datepicker.min.js"></script>
         <script src="js/bootstrap-select.min.js"></script>
+        <script src="js/bootstrap-formhelpers.min.js"></script>
+        <script src="js/bootstrap-table.min.js"></script>
+        
+        <script>
+            populateCountries("country", "state");
+        </script>
         
         <script>
          $(document).ready(function() {

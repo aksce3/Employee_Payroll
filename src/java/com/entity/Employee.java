@@ -16,7 +16,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.*;
 import javax.validation.constraints.*;
 @Entity
-@Table(name = "addemp")
+@Table(name = "addemp", schema = "public")
 
 public class Employee implements Serializable {
     
@@ -37,9 +37,9 @@ public class Employee implements Serializable {
     private Long pincode;
     @Column @NotEmpty(message = "Address Should not be Blank") @Lob  private String address;
     
-    @Column private String country;
-    @Column private String state;
-    @Column private String city;
+    @Column @NotNull(message = "Country Should not be Blank") private String country;
+    @Column @NotNull(message = "State Should not be Blank") private String state;
+   // @Column private String city;
     
     @Column @NotNull(message = "Marital Status Should not be Blank") private String mstatus;
     @Column @Temporal(TemporalType.DATE) @NotNull(message = "Birth Date Should not be Blank") 
@@ -75,7 +75,7 @@ public class Employee implements Serializable {
     public Employee(int id,long cno,long pincode,long acno,double salary,
                     String fname, String mname, String lname,
                     String email,String gender,String address,
-                    String country,String state,String city,
+                    String country,String state,
                     String mstatus,Date bdate,String bgroup,Date doj,
                     String designation,String department,String emptype,
                     String panno,String pf,String esic,
@@ -94,7 +94,7 @@ public class Employee implements Serializable {
         this.address=address;
         this.country=country;
         this.state=state;
-        this.city=city;
+      //  this.city=city;
         this.mstatus=mstatus;
         this.bdate=bdate;
         this.bgroup=bgroup;
@@ -218,13 +218,13 @@ public class Employee implements Serializable {
         this.state = state;
     }
 
-    public String getCity() {
+ /*   public String getCity() {
         return city;
     }
 
     public void setCity(String city) {
         this.city = city;
-    }
+    } */
 
     public String getMstatus() {
         return mstatus;

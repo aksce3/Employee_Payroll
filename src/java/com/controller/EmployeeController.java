@@ -4,6 +4,7 @@ package com.controller;
 import com.dao.EmployeeDAO;
 import com.entity.Employee;
 import java.util.List;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
-
+import org.springframework.ui.ModelMap;
 
 @Controller
 public class EmployeeController {
@@ -30,8 +31,8 @@ public class EmployeeController {
        return mav;
     }
     
-    @RequestMapping(value = "add_employee")
-    public String add_employee1(Employee emp){
+    @RequestMapping(value = "/add_employee")
+    public String add_employee1(Employee employee){
         return "add_employee";
     }
    /* @RequestMapping(value = "/saveEmployee", method = RequestMethod.GET)
@@ -43,7 +44,7 @@ public class EmployeeController {
     }*/
     
     @RequestMapping(value = "/saveEmployee", method = RequestMethod.POST)
-    public String create(@ModelAttribute("addEmployee")Employee employee,BindingResult result,SessionStatus status){
+    public String create(@Valid Employee employee,BindingResult result , ModelMap model ){
        
        //status.setComplete();
        
@@ -53,7 +54,7 @@ public class EmployeeController {
                 //model.addAttribute("lfobj", userDetails);
            int i = employeeDAO.save(employee);
            System.out.println("Data Updated :"  + i) ;
-                return "redirect:hr.do";
+                return "redirect:loginAdmin.do";
             }
        
     }

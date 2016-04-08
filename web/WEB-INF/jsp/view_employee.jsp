@@ -53,10 +53,11 @@
         </div>
 
         
+         
             
         <form role="form" name="ajax-form" id="ajax-form" action="updateEmployee.do" 
               method="post" class="form-main" commandName="editEmployee">
-            <table data-toggle="table">
+            <table data-toggle="table" >
                 <thead>
                   <tr>
                     <th class="detail" rowspan="2"></th>
@@ -89,7 +90,7 @@
                 
                 <tbody>
                     <c:forEach var="employee" items="${employee}">
-                        <tr data-index="${employee.id}">
+                        <tr data-index="${employee.id}" class="detail-view">
                         <td>
                             <a class="detail-icon" href="javascript:">
                               <i class="glyphicon glyphicon-plus icon-plus"></i>
@@ -123,13 +124,19 @@
                             ${employee.lname}
                         </td>
                     </tr> 
-                    <tr class="detail-view">
+                        
+                    <tr >
+                    
                         <td>
+                        <a href="javascript:void(0)">
                             <p>
                         Name = ${employee.fname}
                             </p>
+                        </a>
                         </td>
+                    
                     </tr>
+                    
                     
                     
                     </c:forEach>

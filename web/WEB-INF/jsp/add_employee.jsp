@@ -14,7 +14,12 @@
         <meta charset="utf-8">
         <%@include file="design_div.jsp" %>
         
-        
+        <style>
+  .error {
+      color: #FF0000;
+      font-style: italic;
+  }
+</style>
     </head>
 
     <body>
@@ -59,30 +64,27 @@
 
         <div class="row">
             <div class="col-md-12 text-left">
-                <form role="form" name="ajax-form" id="ajax-form" action="saveEmployee.do" method="post" class="form-main" commandName="addEmployee">
+                <form:form role="form" name="ajax-form" id="ajax-form" action="saveEmployee.do" method="post" class="form-main" commandName="employee">
                     <div class="col-xs-12">  
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">       
                         <div class="form-group col-sm-4">
                            <label for="fname">First Name</label>
-                           <input class="form-control" id="fname" name="fname" 
-                                  onblur="if(this.value == '') this.value='First Name'" 
-                                  onfocus="if(this.value == 'First Name') this.value=''" type="text" value="First Name">
+                           <form:input class="form-control" path="fname"/>
+                           <form:errors  path="fname"></form:errors>
                         </div>
                         
                         <div class="form-group col-sm-4">
                             <label for="mname">Middle Name</label>
                             <input class="form-control" id="mname" name="mname" 
-                                  onblur="if(this.value == '') this.value='Middle Name'" 
-                                  onfocus="if(this.value == 'Middle Name') this.value=''" type="text" value="Middle Name">
-                           <div class="error" id="err-name" style="display: none;">Please Enter Middle Name</div>
+                                   type="text">
+                            <form:errors path="mname"></form:errors>
                         </div>
                         
                         <div class="form-group col-sm-4">
                             <label for="lname">Last Name</label>
                             <input class="form-control" id="lname" name="lname" 
-                                  onblur="if(this.value == '') this.value='Last Name'" 
-                                  onfocus="if(this.value == 'Last Name') this.value=''" type="text" value="Last Name">
-                           <div class="error" id="err-name" style="display: none;">Please Enter Last Name</div>
+                                  type="text">
+                           
                         </div>
                     </div> 
                     </div>
@@ -92,8 +94,7 @@
                         <div class="form-group col-sm-6">
                            <label for="email">Email Address</label>
                            <input class="form-control" id="email" name="email" 
-                                  onblur="if(this.value == '') this.value='Email Address'" 
-                                  onfocus="if(this.value == 'Email Address') this.value=''" type="email" value="Email Address">
+                                   type="email" >
                            <div class="error" id="err-name" style="display: none;">Please Enter Email Address</div>
                         </div>
                         
@@ -335,7 +336,7 @@
                         <input type="submit" class="btn btn-custom" value="Add">
                     </div>
                     
-                </form>
+                </form:form>
             </div> 
         </div>   
     </div>

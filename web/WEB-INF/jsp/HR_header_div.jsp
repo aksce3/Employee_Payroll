@@ -4,6 +4,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+< % session.invalidate(); %>
 <!DOCTYPE html>
 <html>
     <body>
@@ -34,7 +35,7 @@
                             <ul class="dropdown-menu arrow">
                                 <li><a href="add_employee.do">Add Employee</a></li>
                                 <li><a href="viewAllEmployees.do">View Employees</a></li>
-                                <li><a href="#">Delete Employee</a></li>
+                                <li><a href="edit_employee.do">Update Employee</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -58,7 +59,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="">Log out</a>
+                            <a href="hr.do">Log out</a>
                         </li>
 
                     </ul>

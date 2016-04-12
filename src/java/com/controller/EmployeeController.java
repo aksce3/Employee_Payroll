@@ -59,18 +59,18 @@ public class EmployeeController {
        
     }
     
-   /* @RequestMapping(value = "/updateEmployee",method = RequestMethod.GET)
+   @RequestMapping(value = "/edit_employee",method = RequestMethod.GET)
     public ModelAndView edit(@RequestParam("id")Integer id){
-       ModelAndView mav = new ModelAndView("editEmployee");
-       Employee employee = employeeDAO.getById(id);
-       mav.addObject("editEmployee",employee);
+       ModelAndView mav = new ModelAndView("edit_employee");
+       Employee employee1 = employeeDAO.getById(id);
+       mav.addObject("editEmployee",employee1);
        return mav;
-    } */
+    } 
     
-    @RequestMapping(value = "edit_employee")
+   /* @RequestMapping(value = "edit_employee")
     public String edit_employee1(Employee emp){
         return "edit_employee";
-    }
+    }  */
     
     @RequestMapping(value = "/updateEmployee",method = RequestMethod.POST)
     public String update(Employee employee,BindingResult result,SessionStatus status){
@@ -82,7 +82,7 @@ public class EmployeeController {
             } else {
                 //model.addAttribute("lfobj", userDetails);
                 employeeDAO.update(employee);
-                return "redirect:iewAllEmployees.do";
+                return "redirect:viewAllEmployees.do";
             }  
         
     }

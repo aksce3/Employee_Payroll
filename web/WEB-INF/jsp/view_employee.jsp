@@ -9,6 +9,18 @@
     <head>
         <meta charset="utf-8">
         <%@include file="design_div.jsp" %>
+        
+        <script type="text/javascript">
+          $('#accordion1').on('shown.bs.collapse', function () {
+          $("#package1 i.indicator").removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
+         });
+         
+         $('#accordion1').on('hidden.bs.collapse', function () {
+         $("#package1 i.indicator").removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-up");
+        });
+            
+            
+        </script>
        
     </head>
 
@@ -56,20 +68,13 @@
          
             
         <form role="form" name="ajax-form" id="ajax-form" action="updateEmployee.do" 
-              method="post" class="form-main" commandName="editEmployee">
-            <table data-toggle="table" >
+              method="post" class="form-main" commandName="viewAllEmployees">
+            <table data-toggle="table"   id="tableSearchResults" 
+                   class="table table-hover  table-striped table-condensed">
                 <thead>
                   <tr>
                     <th class="detail" rowspan="2"></th>
-                    
-                    <th class="detail"></th>
-                    
-                    <th class="bs-checkbox " rowspan="2" tabindex="0">
-                        <div class="th-inner ">
-                            <input name="btSelectAll" type="checkbox">
-                        </div>
-                    </th>
-
+                  
                     <th data-field="id">
                         <div class="th-inner sortable both">Employee ID</div>
                     </th>
@@ -85,61 +90,140 @@
                     <th>
                         <div class="th-inner ">Last Name</div>
                     </th>
+                    
+                    <th class="detail"></th>
+                    
+                    
                   </tr>
                 </thead> 
                 
                 <tbody>
-                    <c:forEach var="employee" items="${employee}">
-                        <tr data-index="${employee.id}" class="detail-view">
-                        <td>
-                            <a class="detail-icon" href="javascript:">
-                              <i class="glyphicon glyphicon-plus icon-plus"></i>
-                            </a>  
-                            
-                        </td>
+                  <c:forEach var="employee" items="${employee}">
+                       <tr id="package1" class="accordion-toggle" data-toggle="collapse" 
+                            data-parent="#OrderPackages" data-target="#${employee.id}">
+                           
+                           <td>
+                               <i class="indicator glyphicon glyphicon-chevron-up pull-right"></i>
+                           </td>
                         
-                        <td style="text-align: center; ">
-                            <a class="remove" href="javascript:void(0)" title="Remove">
-                                <i class="glyphicon glyphicon-remove"></i>
-                            </a>
-                        </td>
+                           <td style="text-align: center; ">
+                               ${employee.id}
+                           </td>
                         
-                        <td class="bs-checkbox ">
-                            <input data-index="0" name="btSelectItem" type="checkbox" value="0">
-                        </td>
+                           <td style="text-align: center; ">
+                              ${employee.fname}
+                           </td>
                         
-                        <td style="text-align: center; ">
-                            ${employee.id}
-                        </td>
+                           <td style="text-align: center; ">
+                              ${employee.mname}
+                           </td>
                         
-                        <td style="text-align: center; ">
-                            ${employee.fname}
-                        </td>
+                           <td style="text-align: center; ">
+                             ${employee.lname}
+                           </td>
+                          
                         
-                        <td style="text-align: center; ">
-                            ${employee.mname}
-                        </td>
-                        
-                        <td style="text-align: center; ">
-                            ${employee.lname}
-                        </td>
-                    </tr> 
-                        
-                    <tr >
-                    
-                        <td>
-                        <a href="javascript:void(0)">
-                            <p>
-                        Name = ${employee.fname}
-                            </p>
-                        </a>
-                        </td>
-                    
+                          <td style="text-align: center; ">
+                              <a href="edit_employee.do?id=${employee.id}">
+                                  <button type="button" class="btn btn-info">Edit</button>
+                              </a>
+                          </td>
+                          
+                           
+                      </tr> 
+                      
+                      
+                    <tr>
+                       <td colspan="7" class="hiddenRow">
+                           <div class="accordion-body collapse packageDetails1" id="${employee.id}">
+                             <p><b> <font color="blue">Full Name:</font></b> 
+                                ${employee.fname} ${employee.mname} ${employee.lname} 
+                             </p>
+                                 
+                             <p><b> <font color="blue">Email Address:</font></b> 
+                                 ${employee.email} 
+                             </p>
+                             
+                             <p><b> <font color="blue">Contact No:</font></b> 
+                                 ${employee.cno}  
+                             </p>
+                             
+                             <p><b> <font color="blue">Gender:</font></b> 
+                                 ${employee.gender}  
+                             </p>
+                             
+                             <p><b> <font color="blue">Pincode:</font></b> 
+                                 ${employee.pincode}  
+                             </p>
+                             
+                             <p><b> <font color="blue">Address:</font></b> 
+                                 ${employee.address}  
+                             </p>
+                                 
+                             <p><b> <font color="blue">Country:</font></b> 
+                                 ${employee.country}
+                             </p>
+                             
+                             <p><b> <font color="blue">State:</font></b> 
+                                 ${employee.state}  
+                             </p>
+                             
+                             <p><b> <font color="blue">Marital Status:</font></b> 
+                                 ${employee.mstatus}  
+                             </p>
+                             
+                             <p><b> <font color="blue">Blood Group:</font></b> 
+                                 ${employee.bgroup}  
+                             </p>
+                             
+                             <p><b> <font color="blue">Designation:</font></b> 
+                                 ${employee.designation}
+                             </p>
+                             
+                             <p><b> <font color="blue">Department:</font></b> 
+                                 ${employee.department}  
+                             </p>
+                             
+                             <p><b> <font color="blue">Employee Type:</font></b> 
+                                 ${employee.emptype}   
+                             </p>
+                             
+                             <p><b> <font color="blue">Pan Card No:</font></b> 
+                                 ${employee.panno}  
+                             </p>
+                             
+                             <p><b> <font color="blue">PF:</font></b> 
+                                 ${employee.pf}   
+                             </p>
+                             
+                             <p><b> <font color="blue">Bank Name:</font></b> 
+                                 ${employee.bname}   
+                             </p>
+                             
+                             <p><b> <font color="blue">Account No:</font></b> 
+                                 ${employee.acno}   
+                             </p>
+                             
+                             <p><b> <font color="blue">Salary Slab:</font></b> 
+                                 ${employee.salaryslab}   
+                             </p>
+                             
+                             <p><b> <font color="blue">Salary:</font></b> 
+                                 ${employee.salary}   
+                             </p>
+                             
+                              <p><b> <font color="blue">Payment Type:</font></b> 
+                                 ${employee.ptype}   
+                             </p>
+                        </div>   
+                       </td>       
                     </tr>
                     
+                      </c:forEach>
+                        
                     
                     
-                    </c:forEach>
+                    
                 </tbody>
             </table>
                 </form>

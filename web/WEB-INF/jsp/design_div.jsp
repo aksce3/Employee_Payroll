@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="css/bootstrap-select.min.css">
         <link rel="stylesheet" href="css/bootstrap-formhelpers.min.css">
         <link rel="stylesheet" href="css/bootstrap-table.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 
          
         

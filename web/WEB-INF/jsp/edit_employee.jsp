@@ -59,9 +59,18 @@
         <div class="row">
             <div class="col-md-12 text-left">
                 <form:form role="form" name="ajax-form" id="ajax-form" action="saveEmployee.do" 
-                           method="post" class="form-main" commandName="employee">
+                           method="post" class="form-main" commandName="updateEmployee">
                     <div class="col-xs-12">  
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">       
+                            
+                        <div class="form-group col-sm-2">
+                           <label for="fname">Employee ID</label>
+                           <form:input class="form-control" path="id"/>
+                           <font color="red" family="Comic Sans, Comic Sans MS, cursive">
+                                <form:errors  path="fname"></form:errors>
+                           </font>
+                        </div>
+                           
                         <div class="form-group col-sm-4">
                            <label for="fname">First Name</label>
                            <form:input class="form-control" path="fname"/>
@@ -70,7 +79,7 @@
                            </font>
                         </div>
                         
-                        <div class="form-group col-sm-4">
+                        <div class="form-group col-sm-2">
                             <label for="mname">Middle Name</label>
                             <input class="form-control" id="mname" name="mname" 
                                    type="text">

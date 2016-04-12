@@ -64,7 +64,7 @@ public class Employee implements Serializable {
     @Column private double salary;
     @Column(name = "PaymentType") @NotNull(message = "Payment Type Should not be Blank")
     private String ptype;
-    
+    private String password;
     
 
     public Employee() {
@@ -79,7 +79,7 @@ public class Employee implements Serializable {
                     String mstatus,Date bdate,String bgroup,Date doj,
                     String designation,String department,String emptype,
                     String panno,String pf,String esic,
-                    String bname,String salaryslab,String ptype){
+                    String bname,String salaryslab,String ptype , String password){
         super();
         this.id=id;
         this.cno=cno;
@@ -107,7 +107,7 @@ public class Employee implements Serializable {
         this.bname=bname;
         this.salaryslab=salaryslab;
         this.ptype=ptype;
-        
+        this.password = password;
         
         
         
@@ -331,6 +331,20 @@ public class Employee implements Serializable {
 
     public void setBdate(Date bdate) {
         this.bdate = bdate;
+    }
+
+    /**
+     * @return the password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * @param password the password to set
+     */
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     

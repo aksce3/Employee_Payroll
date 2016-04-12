@@ -127,7 +127,13 @@
                               <a href="edit_employee.do?id=${employee.id}">
                                   <button type="button" class="btn btn-info">Edit</button>
                               </a>
+                                  
+                              <a href="edit_employee.do?id=${employee.id}">
+                                  <button type="button" class="btn btn-info">Delete</button>
+                              </a>    
                           </td>
+                          
+                         
                           
                            
                       </tr> 

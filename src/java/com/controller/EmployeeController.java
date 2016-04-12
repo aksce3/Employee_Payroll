@@ -35,18 +35,9 @@ public class EmployeeController {
     public String add_employee1(Employee employee){
         return "add_employee";
     }
-   /* @RequestMapping(value = "/saveEmployee", method = RequestMethod.GET)
-    public ModelAndView newuserForm(){
-       ModelAndView mav = new ModelAndView("newEmployee");
-       Employee employee = new Employee();
-       mav.getModelMap().put("newEmployee",employee);
-       return mav;
-    }*/
     
     @RequestMapping(value = "/saveEmployee", method = RequestMethod.POST)
     public String create(@Valid Employee employee,BindingResult result , ModelMap model ){
-       
-       //status.setComplete();
        
        if (result.hasErrors()) {
                 return "add_employee";
@@ -63,7 +54,7 @@ public class EmployeeController {
     public ModelAndView edit(@RequestParam("id")Integer id){
        ModelAndView mav = new ModelAndView("edit_employee");
        Employee employee1 = employeeDAO.getById(id);
-       mav.addObject("editEmployee",employee1);
+       mav.addObject("edit_employee",employee1);
        return mav;
     } 
     
@@ -74,9 +65,7 @@ public class EmployeeController {
     
     @RequestMapping(value = "/updateEmployee",method = RequestMethod.POST)
     public String update(Employee employee,BindingResult result,SessionStatus status){
-      //  employeeDAO.update(employee);
-      //  status.setComplete();
-      //  return "redirect:hr.do";
+      
       if (result.hasErrors()) {
                 return "edit_employee";
             } else {

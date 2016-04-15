@@ -42,13 +42,12 @@ public class EmployeeController {
        if (result.hasErrors()) {
                 return "add_employee";
             } else {
-                //model.addAttribute("lfobj", userDetails);
+                
            int i = employeeDAO.save(employee);
            System.out.println("Data Updated :"  + i) ;
                 return "redirect:loginAdmin.do";
             }
-       
-    }
+       }
     
    @RequestMapping(value = "/edit_employee",method = RequestMethod.GET)
     public ModelAndView edit(@RequestParam("id")Integer id){
@@ -58,25 +57,20 @@ public class EmployeeController {
        return mav;
     } 
     
-   /* @RequestMapping(value = "edit_employee")
-    public String edit_employee1(Employee emp){
-        return "edit_employee";
-    }  */
-    
     @RequestMapping(value = "/updateEmployee",method = RequestMethod.POST)
     public String update(Employee employee,BindingResult result,SessionStatus status){
       
       if (result.hasErrors()) {
                 return "edit_employee";
             } else {
-                //model.addAttribute("lfobj", userDetails);
+                
                 employeeDAO.update(employee);
                 return "redirect:viewAllEmployees.do";
             }  
         
     }
     
-    @RequestMapping("deleteEmployee")
+    @RequestMapping("delete_employee")
     public ModelAndView delete(@RequestParam("id")Integer id){
         ModelAndView mav = new ModelAndView("redirect:viewAllEmployees.do");
         employeeDAO.delete(id);

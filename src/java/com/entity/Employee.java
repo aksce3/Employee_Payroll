@@ -28,7 +28,11 @@ public class Employee implements Serializable {
     @Column @NotEmpty(message = "Please Enter Your Middle Name") private String mname;
     @Column @NotEmpty(message = "Please Enter Your Last Name") private String lname; 
     
-    @Column @Email @NotEmpty(message = "Please Enter Your Email Address") private String email;
+    @Column @Email @NotEmpty(message = "Please Enter Email Address") private String email;
+    
+    @Column @NotEmpty(message = "Pleasw Enter Password") @Size(min = 3,max = 8)
+    private String password;
+    
     @Column //@Size(min = 10, max = 10)
     private Long cno;  
     @Column @NotNull(message = "Gender Should not be Blank") private String gender;
@@ -64,7 +68,7 @@ public class Employee implements Serializable {
     @Column private double salary;
     @Column(name = "PaymentType") @NotNull(message = "Payment Type Should not be Blank")
     private String ptype;
-    private String password;
+    
     
 
     public Employee() {
@@ -333,16 +337,10 @@ public class Employee implements Serializable {
         this.bdate = bdate;
     }
 
-    /**
-     * @return the password
-     */
     public String getPassword() {
         return password;
     }
 
-    /**
-     * @param password the password to set
-     */
     public void setPassword(String password) {
         this.password = password;
     }

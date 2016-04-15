@@ -1,9 +1,8 @@
 
 package com.controller;
 
-import com.dao.LoginDAO;
-import com.dao.UserValidator;
-
+import com.dao.EmpLoginDAO;
+import com.dao.EmpUserValidator;
 import com.entity.Employee;
 import com.entity.Login;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,29 +19,30 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class EmpLoginController {
 
     @Autowired
-    private LoginDAO logindao;
+    private EmpLoginDAO empLoginDAO;
+    @RequestMapping(value = "employee",method = RequestMethod.GET)
+       public String hellloWorld(Employee emp){
+       return "employee";
+       }
     
     @RequestMapping(value = "EmploginAdmin", method = RequestMethod.GET)
-      public String loginSuccess(@ModelAttribute("adminLogin") Employee emplogin, ModelMap model) {
-        //System.out.println("Enter into Login Controller" +emplogin.getUname());
-        
-        int s=0;// = logindao.findByUname(emplogin);
+      public String loginSuccess(@ModelAttribute("employeeLogin") Employee employee, ModelMap model) {
+        System.out.println("Enter into Employee Login Controller" +employee.getEmail());
      
+        int s = empLoginDAO.findByEmail(employee);
+        
         if(s!=0)
         {
-         return "admin";
+         return "emp_main";
         }
          else
         {
-           return "hr";
+           return "employee";
         }
     }
-      
-    
-
-    
+        
     @InitBinder
     public void initBinder(WebDataBinder binder) {
-        binder.setValidator(new UserValidator());
+        binder.setValidator(new EmpUserValidator());
     }
 }

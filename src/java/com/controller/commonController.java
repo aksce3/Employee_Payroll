@@ -36,10 +36,7 @@ public class commonController {
         return "about";
     }
     
-    @RequestMapping(value = "employee")
-    public String employee() {
-        return "employee";
-    }
+    
     
     
     // page opening

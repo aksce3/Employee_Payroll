@@ -140,7 +140,7 @@
                             
                             <div class="form-group col-sm-2">
                                 <br>
-                                <input class="form-control" type="text" name="designation" value="${edit_employee.designation}" disabled>
+                                <input class="form-control" type="text" value="${edit_employee.designation}" disabled>
                             </div>
 
                             <div class="form-group col-sm-2">
@@ -155,7 +155,7 @@
                             
                             <div class="form-group col-sm-2">
                                 <br>
-                                <input class="form-control" type="text" name="department" value="${edit_employee.department}" disabled>
+                                <input class="form-control" type="text" value="${edit_employee.department}" disabled>
                             </div>
 
                             <div class="form-group col-sm-2">
@@ -169,7 +169,7 @@
                             
                             <div class="form-group col-sm-2">
                                 <br>
-                                <input class="form-control" type="text" name="emptype" value="${edit_employee.emptype}" disabled>
+                                <input class="form-control" type="text" value="${edit_employee.emptype}" disabled>
                             </div>
                         </div>
                     </div>  
@@ -235,7 +235,7 @@
                             
                             <div class="form-group col-sm-2">
                                 <br>
-                                <input class="form-control" type="text" name="salaryslab" value="${edit_employee.salaryslab}" disabled>
+                                <input class="form-control" type="text" value="${edit_employee.salaryslab}" disabled>
                             </div>
                             
                             
@@ -252,7 +252,7 @@
                             
                             <div class="form-group col-sm-2">
                                 <br>
-                                <input class="form-control" type="text" name="ptype" value="${edit_employee.ptype}" disabled>
+                                <input class="form-control" type="text" value="${edit_employee.ptype}" disabled>
                             </div>
                         </div>   
                     </div> 

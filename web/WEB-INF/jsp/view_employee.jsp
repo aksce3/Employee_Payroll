@@ -93,6 +93,8 @@
                     
                     <th class="detail"></th>
                     
+                    <th class="detail"></th>
+                    
                     
                   </tr>
                 </thead> 
@@ -125,15 +127,16 @@
                         
                           <td style="text-align: center; ">
                               <a href="edit_employee.do?id=${employee.id}">
-                                  <button type="button" class="btn btn-info">Edit</button>
-                              </a>
+                                  <input type="button" class="btn btn-info" value="Edit">
+                              </a> 
                                   
-                              <a href="edit_employee.do?id=${employee.id}">
-                                  <button type="button" class="btn btn-info">Delete</button>
-                              </a>    
+                               
                           </td>
-                          
-                         
+                           <td style="text-align: center; ">
+                               <a href="delete_employee.do?id=${employee.id}">
+                                  <input type="button" value="Delete" class="btn btn-info">
+                               </a>
+                           </td>
                           
                            
                       </tr> 

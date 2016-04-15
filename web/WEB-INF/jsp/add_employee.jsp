@@ -92,7 +92,7 @@
                   
                     <div class="col-xs-12">  
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">       
-                        <div class="form-group col-sm-6">
+                        <div class="form-group col-sm-4">
                            <label for="email">Email Address</label>
                            <input class="form-control" id="email" name="email" 
                                    type="email" >
@@ -100,6 +100,15 @@
                                  <form:errors path="email"></form:errors>
                             </font>
                         </div>
+                            
+                        <div class="form-group col-sm-2">
+                           <label for="email">Password</label>
+                           <input class="form-control" id="password" name="password" 
+                                  type="password" >
+                            <font color="red" family="Comic Sans, Comic Sans MS, cursive">
+                                 <form:errors path="password"></form:errors>
+                            </font>
+                        </div>    
                         
                         <div class="form-group col-sm-3">
                             <label for="cno">Contact No</label>

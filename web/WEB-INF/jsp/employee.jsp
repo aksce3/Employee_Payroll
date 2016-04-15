@@ -44,14 +44,14 @@
                 <div class="col-sm-4 col-sm-offset-2">
                     <div class="home-wrapper">
                         
-                     <form role="form" id="register_form" class="intro-form" action="loginAdmin.do" commandName="adminLogin">  
+                     <form role="form" id="register_form" class="intro-form" action="EmploginAdmin.do" commandName="employeeLogin">  
                             <h3 class="text-center"> EMPLOYEE LOGIN</h3>
 
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="User name" required="required" name="uname">
+                                <input type="text" class="form-control" placeholder="User name" required="required" name="email">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password" required="required" name="pass">
+                                <input type="password" class="form-control" placeholder="Password" required="required" name="password">
                             </div>
 
                             <div class="form-group text-center">

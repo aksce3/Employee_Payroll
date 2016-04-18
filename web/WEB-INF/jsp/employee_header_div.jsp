@@ -1,5 +1,5 @@
 <%-- 
-    Document   : HR_header_div.jsp
+    Document   : employee_header_div.jsp
     Author     : akshay
 --%>
 
@@ -33,8 +33,7 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu arrow">
-                                <li><a href="add_employee.do">Add Employee</a></li>
-                                <li><a href="viewAllEmployees.do">View Employees</a></li>
+                               <li><a href="empdetails.do">View Employee Details</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -58,7 +57,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="hr.do">Log out</a>
+                            <a href="employee.do">Log out</a>
                         </li>
 
                     </ul>

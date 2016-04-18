@@ -26,7 +26,7 @@
     <section class="home bg-dark">   
 
         <!-- menu -->
-        <%@include file="HR_header_div.jsp" %>
+        <%@include file="employee_header_div.jsp" %>
         <!--/Menu -->
 
         <div class="clearfix"></div>

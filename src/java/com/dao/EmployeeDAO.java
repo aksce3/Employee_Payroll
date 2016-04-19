@@ -41,4 +41,12 @@ public class EmployeeDAO {
        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Employee.class);
        return criteria.list();
     }
+    
+    @SuppressWarnings("unchecked")
+	public List<Employee> searchEmployees(String fname)
+	{
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Employee.class);
+		criteria.add(Restrictions.ilike("fname", fname+"%"));
+		return criteria.list();
+	}
 }

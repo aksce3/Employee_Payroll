@@ -35,6 +35,7 @@
                             <ul class="dropdown-menu arrow">
                                 <li><a href="add_employee.do">Add Employee</a></li>
                                 <li><a href="viewAllEmployees.do">View Employees</a></li>
+                                <li><a href="show_employee.do">Search Employees</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">

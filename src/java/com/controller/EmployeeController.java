@@ -45,7 +45,7 @@ public class EmployeeController {
                 
            int i = employeeDAO.save(employee);
            System.out.println("Data Updated :"  + i) ;
-                return "redirect:loginAdmin.do";
+                return "redirect:viewAllEmployees.do";
             }
        }
     
@@ -76,4 +76,13 @@ public class EmployeeController {
         employeeDAO.delete(id);
         return mav;
     }
+   
+    @RequestMapping("/show_employee")
+	public ModelAndView searchContacts(@RequestParam(required= false, defaultValue="") String fname)
+	{
+		ModelAndView mav = new ModelAndView("show_employee");
+		List<Employee> employee = employeeDAO.searchEmployees(fname.trim());
+		mav.addObject("SEARCH_EMPLOYEE_RESULTS_KEY", employee);
+		return mav;
+	}
 }

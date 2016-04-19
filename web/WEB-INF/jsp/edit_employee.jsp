@@ -58,7 +58,7 @@
 
         <div class="row">
             <div class="col-md-12 text-left">
-                <form:form role="form" name="ajax-form" id="ajax-form" action="view_employee.do" 
+                <form:form role="form" name="ajax-form" id="ajax-form" action="viewAllEmployees.do" 
                            method="post" class="form-main" commandName="updateEmployee">
                     
                     <c:forEach var="employee" items="${edit_employee}">

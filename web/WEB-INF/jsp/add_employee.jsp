@@ -37,7 +37,7 @@
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <div class="home-wrapper">
-                        <h1 class="animated fadeInDown wow" data-wow-delay=".1s">Employee Details</h1>
+                        <h1 class="animated fadeInDown wow" data-wow-delay=".1s">Add Employee Details</h1>
                         
                     </div>
                 </div>

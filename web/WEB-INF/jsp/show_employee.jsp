@@ -45,7 +45,7 @@
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <div class="home-wrapper">
-                        <h1 class="animated fadeInDown wow" data-wow-delay=".1s">View Employee Details</h1>
+                        <h1 class="animated fadeInDown wow" data-wow-delay=".1s">Search Employee Details</h1>
                         
                     </div>
                 </div>
@@ -67,9 +67,24 @@
         
          
             
-        <form role="form" name="ajax-form" id="ajax-form" action="updateEmployee.do" 
-              method="post" class="form-main" commandName="viewAllEmployees">
-          
+        <form role="form" name="ajax-form" id="ajax-form" action="show_employee.do" 
+              method="post" class="form-main" commandName="show_employee">
+            
+             <div class="col-xs-12">  
+                 <label for="fname">Enter Employee Name</label>    
+                     <div class="row animated fadeInDown wow" data-wow-delay=".5s"> 
+                          <div class="form-group col-sm-6">
+                             <input type="text" class="form-control">&nbsp;&nbsp;
+                          </div>   
+                        
+                          <div class="form-group col-sm-4">   
+                              <input type="submit" value="Search" class="btn btn-info"/>
+                              <input type="button" value="New Contact" class="btn btn-info" 
+                                  onclick="javascript:go('add_employee.do');"/>
+                          </div>   
+                     </div>       
+            </div>
+            
             <table data-toggle="table"   id="tableSearchResults" 
                    class="table table-hover  table-striped table-condensed">
                 <thead>
@@ -97,9 +112,14 @@
                     <th class="detail"></th>
                  </tr>
                  
+                 <c:if test="${empty SEARCH_CONTACTS_RESULTS_KEY}">
+		<tr>
+			<td colspan="7">No Results found</td>
+		</tr>
+		</c:if>
               </thead> 
                 
-             
+              <c:if test="${! empty SEARCH_CONTACTS_RESULTS_KEY}">
                 <tbody>
                    
                     <c:forEach var="employee" items="${employee}">
@@ -235,7 +255,7 @@
                       </c:forEach>
                     
                     </tbody>
-                  
+                   </c:if>
                     
                         
                     

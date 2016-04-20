@@ -84,10 +84,10 @@
                           </div>   
                      </div>       
             </div>
-            
+           
             <table data-toggle="table"   id="tableSearchResults" 
                    class="table table-hover  table-striped table-condensed">
-                <thead>
+               <thead>
                   <tr>
                     <th class="detail" rowspan="2"></th>
                   
@@ -119,10 +119,11 @@
 		</c:if>
               </thead> 
                 
-              <c:if test="${! empty SEARCH_CONTACTS_RESULTS_KEY}">
+              
                 <tbody>
                    
                     <c:forEach var="employee" items="${employee}">
+                       <c:if test="${! empty SEARCH_CONTACTS_RESULTS_KEY}"> 
                        <tr id="package1" class="accordion-toggle" data-toggle="collapse" 
                             data-parent="#OrderPackages" data-target="#${employee.id}">
                            
@@ -251,11 +252,11 @@
                         </div>   
                        </td>       
                     </tr>
-                    
-                      </c:forEach>
+                     </c:if>
+                 </c:forEach>
                     
                     </tbody>
-                   </c:if>
+                   
                     
                         
                     

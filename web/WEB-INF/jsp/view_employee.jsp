@@ -67,8 +67,23 @@
         
          
             
-        <form role="form" name="ajax-form" id="ajax-form" action="updateEmployee.do" 
-              method="post" class="form-main" commandName="viewAllEmployees">
+        <form role="form" name="ajax-form" id="ajax-form" action="view_employee.do" 
+              method="post" class="form-main">
+            
+            <div class="col-xs-12">  
+                 <label for="fname">Enter Employee Name</label>    
+                     <div class="row animated fadeInDown wow" data-wow-delay=".5s"> 
+                          <div class="form-group col-sm-6">
+                             <input type="text" class="form-control">&nbsp;&nbsp;
+                          </div>   
+                        
+                          <div class="form-group col-sm-4">   
+                              <input type="submit" value="Search" class="btn btn-info"/>
+                              <input type="button" value="New Contact" class="btn btn-info" 
+                                  onclick="javascript:go('add_employee.do');"/>
+                          </div>   
+                     </div>       
+            </div>
           
             <table data-toggle="table"   id="tableSearchResults" 
                    class="table table-hover  table-striped table-condensed">
@@ -96,12 +111,19 @@
                     
                     <th class="detail"></th>
                  </tr>
-                 
+              
               </thead> 
+              
+               <c:if test="${empty SEARCH_CONTACTS_RESULTS_KEY}">
+		   <tr>
+			<td colspan="7">No Results found</td>
+		   </tr>
+	      </c:if>
+               
                 
              
                 <tbody>
-                   
+                  
                     <c:forEach var="employee" items="${employee}">
                        <tr id="package1" class="accordion-toggle" data-toggle="collapse" 
                             data-parent="#OrderPackages" data-target="#${employee.id}">
@@ -128,7 +150,7 @@
                           
                         
                           <td style="text-align: center; ">
-                              <a href="edit_employee.do?id=${employee.id}">
+                              <a href="updateEmployee.do?id=${employee.id}">
                                   <input type="button" class="btn btn-info" value="Edit">
                               </a> 
                                   
@@ -142,7 +164,6 @@
                           
                            
                       </tr> 
-                      
                       
                       
                       
@@ -235,7 +256,7 @@
                       </c:forEach>
                     
                     </tbody>
-                  
+             
                     
                         
                     

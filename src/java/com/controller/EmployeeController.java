@@ -31,6 +31,15 @@ public class EmployeeController {
        return mav;
     }
     
+    @RequestMapping("/show_employee")
+	public ModelAndView searchContacts(@RequestParam(required= false, defaultValue="") String fname)
+	{
+		ModelAndView mav = new ModelAndView("view_employee");
+		List<Employee> employee = employeeDAO.searchEmployees(fname.trim());
+		mav.addObject("SEARCH_EMPLOYEE_RESULTS_KEY", employee);
+		return mav;
+	}
+    
     @RequestMapping(value = "/add_employee")
     public String add_employee1(Employee employee){
         return "add_employee";
@@ -49,7 +58,7 @@ public class EmployeeController {
             }
        }
     
-   @RequestMapping(value = "/edit_employee",method = RequestMethod.GET)
+   @RequestMapping(value = "/updateEmployee",method = RequestMethod.GET)
     public ModelAndView edit(@RequestParam("id")Integer id){
        ModelAndView mav = new ModelAndView("edit_employee");
        Employee employee1 = employeeDAO.getById(id);
@@ -76,13 +85,10 @@ public class EmployeeController {
         employeeDAO.delete(id);
         return mav;
     }
+    
+     @RequestMapping(value = "/upload_attendance")
+    public String upload_attendance(Employee employee){
+        return "upload_attendance";
+    }
    
-    @RequestMapping("/show_employee")
-	public ModelAndView searchContacts(@RequestParam(required= false, defaultValue="") String fname)
-	{
-		ModelAndView mav = new ModelAndView("show_employee");
-		List<Employee> employee = employeeDAO.searchEmployees(fname.trim());
-		mav.addObject("SEARCH_EMPLOYEE_RESULTS_KEY", employee);
-		return mav;
-	}
 }

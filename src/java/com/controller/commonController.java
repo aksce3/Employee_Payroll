@@ -36,15 +36,6 @@ public class commonController {
         return "about";
     }
     
-    
-    
-    
-    // page opening
-    
-    
-    // for form redirectin
-    
-    
 }    
 
     

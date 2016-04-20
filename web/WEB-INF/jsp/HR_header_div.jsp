@@ -44,8 +44,9 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu arrow">
-                                <li><a href="#">View Daily Attendance</a></li>
-                                <li><a href="#">Leave Management</a></li>
+                                <li><a href="upload_attendance.do">Upload Attendance</a></li>
+                                <li><a href="#">Calculate Attendance</a></li>
+                                <li><a href="#">View Attendance</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">

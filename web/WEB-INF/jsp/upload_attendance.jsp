@@ -58,15 +58,15 @@
 
         <div class="row">
             <div class="col-md-12 text-left">
-                <form:form role="form" name="ajax-form" id="ajax-form" action="" 
-                           method="post" class="form-main" commandName="">
+                <form:form role="form" name="ajax-form" id="ajax-form" action="upload_attendance.do" 
+                           method="post" class="form-main" commandName="upload_attendance">
                   
                     <div class="col-xs-12">  
                         <label for="fname">Upload csv File</label>
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">       
                         <div class="form-group col-sm-6">
                            
-                           <input type="file" class="form-control">
+                           <input type="file" class="form-control" name="fileUpload">
                         </div>
                           
                         <div class="form-group col-sm-4">    
@@ -74,44 +74,7 @@
                         </div>
                         </div>    
                     </div>    
-                    
-                     &nbsp;&nbsp;&nbsp;
-                     
-                    <div class="col-xs-12">
-                        
-                        <div class="row animated fadeInDown wow" data-wow-delay=".5s">       
-                            <div class="form-group col-sm-3">
-                                <label for="fname">Employee</label>
-                                <input type="text" class="form-control"> 
-                            </div>
-                            
-                            <div class="form-group col-sm-3">
-                                <label for="doj" class="control-label">From Date:</label>
-                                <div class="input-group input-append date" id="dojPicker">
-                                    <input type="text" class="form-control" name="doj" id="doj"/>
-                                    <span class="input-group-addon add-on">
-                                    <span class="glyphicon glyphicon-calendar"></span></span>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group col-sm-3">
-                                <label for="doj" class="control-label">To Date:</label>
-                                <div class="input-group input-append date" id="dojPicker">
-                                    <input type="text" class="form-control" name="doj" id="doj"/>
-                                    <span class="input-group-addon add-on">
-                                    <span class="glyphicon glyphicon-calendar"></span></span>
-                                </div>
-                            </div>
-                            
-                            <br>
-                                 <input type="submit" class="btn btn-custom" value="Search"> 
-                        </div>  
-                        
-                        
-                    </div> 
-                    
-                    
-                           
+                  
                 </form:form>
             </div> 
         </div>   

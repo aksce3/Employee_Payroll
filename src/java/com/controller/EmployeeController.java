@@ -86,9 +86,6 @@ public class EmployeeController {
         return mav;
     }
     
-     @RequestMapping(value = "/upload_attendance")
-    public String upload_attendance(Employee employee){
-        return "upload_attendance";
-    }
+   
    
 }

@@ -35,7 +35,7 @@
                             <ul class="dropdown-menu arrow">
                                 <li><a href="add_employee.do">Add Employee</a></li>
                                 <li><a href="viewAllEmployees.do">View Employees</a></li>
-                                <li><a href="show_employee.do">Search Employees</a></li>
+                                <li><a href="search_employee.do">Search Employees</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -57,6 +57,16 @@
                             <ul class="dropdown-menu arrow">
                                 <li><a href="#">Add Salary</a></li>
                                 <li><a href="#">Generate Salary</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown">
+                                Leave 
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu arrow">
+                                <li><a href="#">Add Leave</a></li>
+                                <li><a href="#">Update Leave</a></li>
                             </ul>
                         </li>
                         <li>

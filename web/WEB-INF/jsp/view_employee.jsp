@@ -1,4 +1,3 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>  
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
@@ -67,14 +66,13 @@
         
          
             
-        <form role="form" name="ajax-form" id="ajax-form" action="view_employee.do" 
+        <form role="form" name="ajax-form" id="ajax-form" action="searchEmployee.do" 
               method="post" class="form-main">
-            
-            <div class="col-xs-12">  
+           <div class="col-xs-12">  
                  <label for="fname">Enter Employee Name</label>    
                      <div class="row animated fadeInDown wow" data-wow-delay=".5s"> 
                           <div class="form-group col-sm-6">
-                             <input type="text" class="form-control">&nbsp;&nbsp;
+                              <input type="text" class="form-control" name="fname">&nbsp;&nbsp;
                           </div>   
                         
                           <div class="form-group col-sm-4">   
@@ -84,7 +82,8 @@
                           </div>   
                      </div>       
             </div>
-          
+            
+        </form>    
             <table data-toggle="table"   id="tableSearchResults" 
                    class="table table-hover  table-striped table-condensed">
                 <thead>
@@ -112,19 +111,18 @@
                     <th class="detail"></th>
                  </tr>
               
-              </thead> 
-              
-               <c:if test="${empty SEARCH_CONTACTS_RESULTS_KEY}">
-		   <tr>
+                 <c:if test="${empty SEARCH_EMPLOYEES_RESULTS_KEY}">
+	           <tr>
 			<td colspan="7">No Results found</td>
 		   </tr>
 	      </c:if>
+               </thead> 
                
-                
+              
              
                 <tbody>
-                  
-                    <c:forEach var="employee" items="${employee}">
+                  <c:if test="${! empty SEARCH_EMPLOYEES_RESULTS_KEY}">
+                    <c:forEach var="employee" items="${SEARCH_EMPLOYEES_RESULTS_KEY}">
                        <tr id="package1" class="accordion-toggle" data-toggle="collapse" 
                             data-parent="#OrderPackages" data-target="#${employee.id}">
                            
@@ -254,7 +252,7 @@
                     </tr>
                     
                       </c:forEach>
-                    
+                  </c:if>
                     </tbody>
              
                     
@@ -264,7 +262,7 @@
                     
                 
             </table>
-                </form>
+             
              
            
     </div>
@@ -289,6 +287,3 @@
 
 
 </html>
-
-
-

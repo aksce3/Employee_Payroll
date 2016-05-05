@@ -19,7 +19,9 @@ public class EmployeeDAO {
     
     public Employee getById(int id){ 
        
+        System.out.println("Select by id : " +(Employee) sessionFactory.getCurrentSession().get(Employee.class, id));
         return (Employee) sessionFactory.getCurrentSession().get(Employee.class, id);
+        
     }
     
     public int save(Employee employee){
@@ -28,7 +30,8 @@ public class EmployeeDAO {
     }
     
     public void update(Employee employee){
-       sessionFactory.getCurrentSession().merge(employee);
+        System.out.println("Have Update......"); 
+       sessionFactory.getCurrentSession().update(employee);
     }
     
     public void delete(int id){
@@ -38,15 +41,19 @@ public class EmployeeDAO {
     
     @SuppressWarnings("unchecked")
     public List<Employee> getEmployees(){
+        System.out.println("Data fetch");
        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Employee.class);
+        System.out.println("Criterai view is : " + criteria.list());
        return criteria.list();
     }
     
     @SuppressWarnings("unchecked")
 	public List<Employee> searchEmployees(String fname)
-	{
+	{       
+                System.out.println("Search Data");
 		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Employee.class);
-		criteria.add(Restrictions.ilike("fname", fname+"%"));
-		return criteria.list();
+                criteria.add(Restrictions.like("fname", fname+"%"));
+		System.out.println("List view is" + criteria.list());
+                return criteria.list();
 	}
 }

@@ -46,7 +46,7 @@ public class Employee implements Serializable {
    // @Column private String city;
     
     @Column @NotNull(message = "Marital Status Should not be Blank") private String mstatus;
-    @Column @Temporal(TemporalType.DATE) @NotNull(message = "Birth Date Should not be Blank") 
+    @Column @Temporal(TemporalType.DATE ) @NotNull(message = "Birth Date Should not be Blank") 
     private Date bdate;
     @Column @NotNull(message = "Blood Group Should not be Blank") private String bgroup;
     @Column @Temporal(TemporalType.DATE) @NotNull(message = "Date of Joining Should not be Blank")

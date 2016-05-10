@@ -23,6 +23,7 @@ public class EmployeeController {
     @Autowired
     private EmployeeDAO employeeDAO;
     
+    int id;
     @RequestMapping("/searchEmployee")
     public ModelAndView searchEmployee(@RequestParam(required= false, defaultValue="") String fname)
 	{
@@ -42,13 +43,6 @@ public class EmployeeController {
        return mav;
     }
     
-    
-    
-   /*@RequestMapping(value = "/search_employee")
-    public String search_employee(Employee employee){
-        return "search_employee";
-    }*/
-    
     @RequestMapping(value = "/add_employee")
     public String add_employee1(Employee employee){
         return "add_employee";
@@ -58,6 +52,7 @@ public class EmployeeController {
     public String create(@Valid Employee employee,BindingResult result , ModelMap model ){
        
        if (result.hasErrors()) {
+                System.out.println("Error in saving " +result.getAllErrors());
                 return "add_employee";
             } else {
                 
@@ -69,25 +64,27 @@ public class EmployeeController {
     
    @RequestMapping(value = "/updateEmployee",method = RequestMethod.GET)
     public ModelAndView edit(@RequestParam("id")Integer id, HttpSession session){
+        this.id = id;
        ModelAndView mav = new ModelAndView("edit_employee");
-       Employee employee1 = employeeDAO.getById(id);
+       Employee employee = employeeDAO.getById(id);
        //session = null ;
-       session.setAttribute("date",employee1.getDoj());
-       mav.addObject("edit_employee1",employee1);
+       //session.setAttribute("date",employee.getDoj());
+       mav.addObject("edit_employee",employee);
        return mav;
     } 
     
     @RequestMapping(value = "/updateEmployee",method = RequestMethod.POST)
-    public String update(Employee employee , BindingResult result){
-      
-    if (result.hasErrors()) {
+    public String update(@ModelAttribute("edit_employee") Employee employee, SessionStatus status){
+      // = employee.getId();
+        System.out.println("Id is : " + id);
+    /*if (result.hasErrors()) {
                 System.out.println("Have Errrors");
                 System.out.println("Errors are: "+ result.getAllErrors());
-                return "edit_employee?id="+employee.getId();
-            }   
+                return "redirect:updateEmployee.do?id="+id;
+            }  */ 
                 
                 employeeDAO.update(employee);
-                
+                status.setComplete();
                 System.out.println("Employee controler updated");
                // status.setComplete();
                 return "redirect:viewAllEmployees.do";

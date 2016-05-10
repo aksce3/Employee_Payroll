@@ -209,7 +209,7 @@
                                 <label for="bgroup" class="control-label">Blood Group</label>
                                 <select class="form-control bfh-selectbox" id="bgroup" name="bgroup">
                                     <option></option>
-                                    <option value="all">All</option>
+                                    <option value="o+">O+</option>
                                     <option value="a+">A+</option>
                                     <option value="b+">B+</option>
                                 </select>
@@ -256,8 +256,8 @@
                                 <select class="form-control bfh-selectbox" id="department" name="department">
                                     <option></option>
                                     <option value="CRM">CRM</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
+                                    <option value="HR">HR</option>
+                                    <option value="DATA">DATA</option>
                                 </select>
                             </div>
 

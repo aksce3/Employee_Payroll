@@ -7,7 +7,7 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.entity.Employee"%>
 <%@page import="java.util.Date"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -60,25 +60,14 @@
                 <hr class="hr">
             </div> 
         </div>
- <%! java.util.Date doj;
- String d; Date d1;%>
-                    <%    doj = (java.util.Date) session.getAttribute("date");
-                     d = doj.toString();
-                    //doj = emp.getDoj() ;
-                    //SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd");
-                    //doj= new Date(format.format(doj));
-                  //  String d = format.format(date);
-                   // doj = new Date(d);
-                    
-                    System.out.println("Date is : " + doj);
-                        //Date d = new Date(doj);%>
+ 
         <div class="row">
             <div class="col-md-12 text-left">
                 <form:form role="form" name="ajax-form" id="ajax-form" action="updateEmployee.do" 
-                           method="post" class="form-main" commandName="employee">
+                           method="post" class="form-main" commandName="edit_employee">
                     
                     
-                    <c:set var="employee1" value="${edit_employee1}"></c:set>
+                    
                     
                         
                         
@@ -87,25 +76,25 @@
                             
                         <div class="form-group col-sm-2">
                            <label for="fname">Employee ID</label>
-                           <input type="text" class="form-control" value="${employee1.id}" name="id" disabled />
-                        <form:errors path="id" cssStyle="color:red"></form:errors> 
+                           <form:input class="form-control" path="id" readonly="true" />
+                           <form:errors path="id" cssStyle="color:red"></form:errors> 
                         </div>
                             
                         <div class="form-group col-sm-4">
                            <label for="fname">First Name</label>
-                           <input type="text" class="form-control" value="${employee1.fname}" name="fname"/>
+                           <form:input class="form-control" path="fname"/>
                            <form:errors path="fname" cssStyle="color:red"></form:errors> 
                         </div>
                         
                         <div class="form-group col-sm-2">
                             <label for="mname">Middle Name</label>
-                            <input class="form-control" type="text" value="${employee1.mname}" name="mname">
+                            <form:input class="form-control" path="mname"/>
                             <form:errors path="mname" cssStyle="color:red"></form:errors> 
                         </div>
                         
                         <div class="form-group col-sm-4">
                             <label for="lname">Last Name</label>
-                            <input class="form-control" type="text" value="${employee1.lname}" name="lname">
+                            <form:input class="form-control" path="lname"/>
                             <form:errors path="lname" cssStyle="color:red"></form:errors> 
                         </div>
                     </div> 
@@ -116,23 +105,19 @@
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">       
                            <div class="form-group col-sm-6">
                              <label for="email">Email Address</label>
-                             <input class="form-control" type="email" value="${employee1.email}" name="email">
+                             <form:input class="form-control" path="email"/>
                             <form:errors path="email"></form:errors>
                            </div>
                         
                             <div class="form-group col-sm-3">
                               <label for="cno">Contact No</label>
-                              <input class="form-control" type="number" name="cno" value="${employee1.cno}">
+                              <form:input class="form-control" path="cno"/>
                               <form:errors path="cno"></form:errors>
                             </div>
                             
                             <div class="form-group col-sm-3">
-                                <label for="bdate" class="control-label">Birth Date</label>
-                                <div class="input-group input-append date">
-                                    <input type="text" class="form-control" name="bdate" id="bdate" value="${employee1.bdate}" disabled/>
-                                    
-                                </div>
-                                
+                              <label for="bdate" class="control-label">Birth Date</label>
+                              <form:input class="form-control" path="bdate" readonly="true"/>
                             </div>
                         </div> 
                     </div>  
@@ -143,10 +128,44 @@
                            
                             <div class="form-group col-sm-3">
                                 <label for="doj" class="control-label">Date Of Joining</label>
-                                <div class="input-group input-append date">
-                                    <input type="text" class="form-control" name="doj" id="doj" value="<%=doj%>" disabled/>
-                                </div>
+                                <form:input class="form-control" path="doj" readonly="true"/> 
                             </div>
+                            
+                            <div class="form-group col-sm-2">
+                                <label for="gender" class="control-label">Gender</label>
+                                <form:select class="form-control bfh-selectbox" path="gender">
+                                    <form:option value="Male" label="Male"/>
+                                    <form:option value="Female" label="Female"/>
+                                </form:select>
+                                <form:errors path="gender"></form:errors>    
+                             </div>   
+                            
+                             <div class="form-group col-sm-2">
+                                <label for="mstatus" class="control-label">Marital Status</label>
+                                <form:select class="form-control bfh-selectbox" path="mstatus">
+                                    <form:option value="Single" label="Single"/>
+                                    <form:option value="Married" label="Married"/>
+                                </form:select>
+                                <form:errors path="mstatus"></form:errors>    
+                             </div>   
+                             
+                             <div class="form-group col-sm-2">
+                                <label for="bgroup" class="control-label">Blood Group</label>
+                                <form:select class="form-control bfh-selectbox" path="bgroup">
+                                    <form:option value="O+" label="O+"/>
+                                    <form:option value="A+" label="A+"/>
+                                    <form:option value="B+" label="B+"/>
+                                </form:select>
+                                <form:errors path="bgroup"></form:errors>    
+                             </div>   
+                             
+                             <div class="form-group col-sm-2">
+                                <label for="password">Password</label>
+                                <form:input class="form-control" path="password" readonly="true"/>
+                                <form:errors path="password"></form:errors>      
+                            </div>
+                             
+                           
                         </div> 
                     </div>                   
                     
@@ -154,19 +173,21 @@
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">
                             <div class="form-group col-sm-3">
                                  <label for="pincode">Pincode</label>
-                                 <input class="form-control" type="number" name="pincode" value="${employee1.pincode}">
+                                 <form:input class="form-control" path="pincode"/>
                                  <form:errors path="pincode"></form:errors>
                             </div>
                             
                             <div class="form-group col-sm-9">
                                  <label for="address">Address</label>
-                                 <input class="form-control" type="text" name="address" value="${employee1.address}">
+                                 <form:input class="form-control" path="address"/>
                                  <form:errors path="address"></form:errors>
                             </div>
                         </div>
                     </div>  
-                 
+                     
                     <br><br>
+                    
+                    
 
                     <div class="col-xs-12 text-center"> 
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">
@@ -179,52 +200,33 @@
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">  
                             <div class="form-group col-sm-2">
                                 <label for="designation" class="control-label">Designation</label>
-                                <select class="form-control bfh-selectbox" id="designation" name="designation">
-                                    <option value="${employee1.designation}"></option>
-                                    <option value="developer">Developer</option>
-                                    <option value="accountant">Accountant</option>
-                                    <option value="manager">Manager</option>
-                                </select>
+                                <form:select class="form-control bfh-selectbox" path="designation">
+                                    <form:option value="developer" label="Developer"/>
+                                    <form:option value="accountant" label="Accountant"/>
+                                    <form:option value="manager" label="Manager"/>
+                                </form:select>
                                 <form:errors path="designation"></form:errors>    
                              </div>   
-                            
-                            <!--<div class="form-group col-sm-2">
-                                <br>
-                                <input class="form-control" type="text" value="" disabled>
-                            </div>--->
-                       
-
-                        <div class="form-group col-sm-2">
+                      
+                            <div class="form-group col-sm-2">
                                 <label for="department" class="control-label">Department</label>
-                                <select class="form-control bfh-selectbox" id="department" name="department">
-                                    <option value="${employee1.department}"></option>
-                                    <option value="CRM">CRM</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
+                                <form:select class="form-control bfh-selectbox" path="department">
+                                    <form:option value="CRM" label="CRM"/>
+                                    <form:option value="HR" label="HR"/>
+                                    <form:option value="DATA" label="DATA"/>
+                                </form:select>
                                 <form:errors path="department"></form:errors>        
                                     
                             </div>       
-                            
-                          <!--  <div class="form-group col-sm-2">
-                                <br>
-                                <input class="form-control" type="text" disabled>
-                            </div>  -->
-
-                           <div class="form-group col-sm-2">
+                         
+                            <div class="form-group col-sm-2">
                                 <label for="emptype" class="control-label">Employee Type</label>
-                                <select class="form-control bfh-selectbox" id="emptype" name="emptype">
-                                    <option value="${employee1.emptype}"></option>
-                                    <option value="permanent">Permanent</option>
-                                    <option value="temporary">Temporary</option>
-                                </select>
+                                <form:select class="form-control bfh-selectbox" path="emptype">
+                                    <form:option value="Permanent" label="Permanent"/>
+                                    <form:option value="Temporary" label="Temporary"/>
+                                </form:select>
                                 <form:errors path="emptype"></form:errors>      
                             </div>      
-                            
-                        <!--    <div class="form-group col-sm-2">
-                                <br>
-                                <input class="form-control" type="text" disabled>
-                            </div>  -->
                         </div>
                     </div>  
                     
@@ -241,7 +243,7 @@
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">  
                            <div class="form-group col-sm-5">
                              <label for="pf">Include PF</label>
-                                <input class="form-control" type="text" value="${employee1.pf}" name="pf">
+                                <form:input class="form-control" path="pf"/>
                                  <form:errors path="pf"></form:errors>      
                           </div>
                         
@@ -261,19 +263,19 @@
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">
                             <div class="form-group col-sm-4">
                                 <label for="bname">Bank Name</label>
-                                <input class="form-control" type="text" value="${employee1.bname}" name="bname">
+                                <form:input class="form-control" path="bname"/>
                                 <form:errors path="bname"></form:errors>      
                             </div>
                             
                             <div class="form-group col-sm-4">
                                 <label for="acno">Account No.</label>
-                                <input class="form-control" type="number" value="${employee1.acno}" name="acno" >
+                                <form:input class="form-control" path="acno" />
                                 <form:errors path="acno"></form:errors>      
                            </div>
                                 
                             <div class="form-group col-sm-4">
                                 <label for="salary">Salary</label>
-                                <input class="form-control" type="number" value="${employee1.salary}" name="salary" min="0">
+                                <form:input class="form-control" path="salary" />
                                 <form:errors path="salary"></form:errors>      
                             </div>    
                         </div>   
@@ -284,51 +286,40 @@
                             
                             <div class="form-group col-sm-3">
                                 <label for="salaryslab" class="control-label">Salary Slab</label>
-                                <select class="selectpicker show-tick form-control" id="salaryslab" name="salaryslab">
-                                    <option value="${employee1.salaryslab}"></option>
-                                    <option value="basic salary">Basic Salary</option>
-                                    <option value="gross salary">Gross Salary</option>
-                                </select>
+                                <form:select class="selectpicker show-tick form-control" path="salaryslab">
+                                    <form:option value="Basic Salary" label="Basic Salary"/>
+                                    <form:option value="Gross Salary" label="Gross Salary"/>
+                                </form:select>
                                 <form:errors path="salaryslab"></form:errors>          
                             </div>     
-                            
-                  <!--          <div class="form-group col-sm-2">
-                                <br>
-                                <input class="form-control" type="text" value="" disabled>
-                            </div>  -->
-                            
-                            
-                            
+                       
                             <div class="form-group col-sm-3">
                                 <label for="ptype" class="control-label">Payment Type</label>
-                                <select class="selectpicker show-tick form-control" id="ptype" name="ptype">
-                                    <option value="${employee1.ptype}"></option>
-                                    <option value="cash">Cash</option>
-                                    <option value="cheque">Cheque</option>
-                                </select>
+                                <form:select class="selectpicker show-tick form-control" path="ptype">
+                                    <form:option value="Cash" label="Cash"/>
+                                    <form:option value="Cheque" label="Cheque"/>
+                                </form:select>
                                 <form:errors path="ptype"></form:errors>          
-                            </div>     
+                            </div>   
                             
-                            
-                       <!--     <div class="form-group col-sm-2">
-                                <br>
-                                <input class="form-control" type="text" value="" disabled>
-                            </div>  -->
+                            <div class="form-group col-sm-2">
+                                <label for="panno">Pan Card Number</label>
+                                <form:input class="form-control" path="panno" readonly="true"/>
+                                <form:errors path="panno"></form:errors>      
+                            </div>
+                       
                         </div>   
                     </div> 
                             
-                            <input type="hidden" name="password" value="${employee1.password}"/>
-                            <input type="hidden" name="gender" value="${employee1.gender}" />
+                      <div class="col-xs-12">
+                        <div class="row animated fadeInDown wow" data-wow-delay=".5s">
                             
-                            <input type="hidden" name="mstatus" value="${employee1.mstatus}" /> 
-                            <input type="hidden" name="bgroup" value="${employee1.bgroup}" /> 
-                            <input type="hidden" name="panno" value="${employee1.panno}" />
-                        
-                            <input type="hidden" name="doj" value="${employee1.doj}"/>
-                            
+                       
+                        </div>   
+                     </div>         
+                         
                             <input type="hidden" name="country" value="${employee1.country}"/>
                             <input type="hidden" name="state" value="${employee1.state}"/>
-                            <input type="hidden" name="salaryslab" value="${employee1.salaryslab}"/>
                             
                             
                             

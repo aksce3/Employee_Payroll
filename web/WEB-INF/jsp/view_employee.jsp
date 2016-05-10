@@ -77,6 +77,8 @@
                         
                           <div class="form-group col-sm-4">   
                               <input type="submit" value="Search" class="btn btn-info"/>
+                              <input type="button" value="Back" class="btn btn-info" 
+                                  onclick="javascript:go('viewAllEmployees.do');"/>
                               <input type="button" value="New Contact" class="btn btn-info" 
                                   onclick="javascript:go('add_employee.do');"/>
                           </div>   

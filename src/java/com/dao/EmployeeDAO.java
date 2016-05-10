@@ -29,9 +29,16 @@ public class EmployeeDAO {
        return (Integer) sessionFactory.getCurrentSession().save(employee);
     }
     
-    public void update(Employee employee){
+    public void update(Employee employee ){
         System.out.println("Have Update......"); 
-       sessionFactory.getCurrentSession().update(employee);
+        System.out.println("Id is:"+employee.getId());
+        System.out.println("Employee Details is : " + employee);
+        //getById(id);
+        //Employee o1 =(Employee) sessionFactory.getCurrentSession().get(Employee.class, id);
+        
+        //o1=employee;
+       // System.out.println("Object is : " + o1);
+       sessionFactory.getCurrentSession().merge(employee);
     }
     
     public void delete(int id){

@@ -39,6 +39,7 @@
         <script src="js/bootstrap-select.min.js"></script>
         <script src="js/bootstrap-formhelpers.min.js"></script>
         <script src="js/bootstrap-table.min.js"></script>
+        <script src="js/employee.js"></script>
         
         <script>
             populateCountries("country", "state");

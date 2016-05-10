@@ -1,6 +1,8 @@
 package com.entity;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -46,11 +48,10 @@ public class Employee implements Serializable {
    // @Column private String city;
     
     @Column @NotNull(message = "Marital Status Should not be Blank") private String mstatus;
-    @Column @Temporal(TemporalType.DATE ) @NotNull(message = "Birth Date Should not be Blank") 
-    private Date bdate;
+    @Column private String bdate;
     @Column @NotNull(message = "Blood Group Should not be Blank") private String bgroup;
-    @Column @Temporal(TemporalType.DATE) @NotNull(message = "Date of Joining Should not be Blank")
-    private Date doj;
+    
+    @Column private String doj;
     
     @Column @NotNull(message = "Designation Should not be Blank") private String designation;
     @Column @NotNull(message = "Department Should not be Blank") private String department;
@@ -80,7 +81,7 @@ public class Employee implements Serializable {
                     String fname, String mname, String lname,
                     String email,String gender,String address,
                     String country,String state,
-                    String mstatus,Date bdate,String bgroup,Date doj,
+                    String mstatus,String bdate,String bgroup,String doj,
                     String designation,String department,String emptype,
                     String panno,String pf,String esic,
                     String bname,String salaryslab,String ptype , String password){
@@ -248,11 +249,11 @@ public class Employee implements Serializable {
         this.bgroup = bgroup;
     }
 
-    public Date getDoj() {
+    public String getDoj() {
         return doj;
     }
 
-    public void setDoj(Date doj) {
+    public void setDoj(String doj) {
         this.doj = doj;
     }
 
@@ -329,11 +330,14 @@ public class Employee implements Serializable {
         this.id = id;
     }
 
-    public Date getBdate() {
+    public String getBdate() {
         return bdate;
     }
 
-    public void setBdate(Date bdate) {
+    public void setBdate(String bdate) {
+        ////DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+       // String date = format.format(bdate);
+       // this.bdate = new Date(date);
         this.bdate = bdate;
     }
 

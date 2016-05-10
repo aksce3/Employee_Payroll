@@ -58,15 +58,16 @@
 
         <div class="row">
             <div class="col-md-12 text-left">
-                <form:form role="form" name="ajax-form" id="ajax-form" action="upload_attendance.do" 
-                           method="post" class="form-main" commandName="upload_attendance">
+                <form:form role="form" name="ajax-form" id="ajax-form" action="UploadServlet.do" 
+                           method="post" class="form-main" commandName="upload_attendance"
+                           enctype="multipart/form-data">
                   
                     <div class="col-xs-12">  
                         <label for="fname">Upload csv File</label>
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">       
                         <div class="form-group col-sm-6">
                            
-                           <input type="file" class="form-control" name="fileUpload">
+                           <input type="file" class="form-control" name="file">
                         </div>
                           
                         <div class="form-group col-sm-4">    

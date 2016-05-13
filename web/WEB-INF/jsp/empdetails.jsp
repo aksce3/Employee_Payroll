@@ -49,53 +49,66 @@
 
 <!-- FEATURES-1 -->
 <section class="section" id="features">
-    <div class="container">
+  <div class="container">
         <div class="row">
             <div class="col-sm-12 text-center">
-                <h1 class="title zoomIn animated wow" data-wow-delay=".1s">Basic Information</h1>
+                <h1 class="title zoomIn animated wow" data-wow-delay=".1s">Employee Information</h1>
                 <hr class="hr">
             </div> 
         </div>
 
-        <div class="row">
-            <div class="col-md-12 text-left">
-                
-                  <table data-toggle="table"   id="tableSearchResults" 
-                   class="table table-hover  table-striped table-condensed">
-                
-                      
-               
-               <tbody>
-                   
-               <c:forEach items="${EMP_EMAIL}" var="employee">
-                   <tr>      
-                           <td style="text-align: center; ">
-                               ${employee.email}
-                           </td>
-                        
-                           <td style="text-align: center; ">
-                              ${employee.fname}
-                           </td>
-                        
-                           <td style="text-align: center; ">
-                              ${employee.mname}
-                           </td>
-                        
-                           <td style="text-align: center; ">
-                             ${employee.lname}
-                           </td>
-                      
-                      </tr> 
-               </c:forEach>
-               </tbody>
-                
-            </table>
+    <div class="row">
+        <div class="col-md-12 text-left">
+            <form:form role="form" name="ajax-form" id="ajax-form" method="post" class="form-main" >
              
-  
-
-            </div> 
-        </div>   
-    </div>
+               <c:forEach items="${EMP_EMAIL}" var="employee">
+                  <div class="col-xs-12">  
+                      <div class="row animated fadeInDown wow" data-wow-delay=".5s">     
+                        <div class="form-group col-sm-2">
+                           <label for="fname">Employee ID</label>    
+                           <input type="text" class="form-control" value="${employee.id}" disabled/>
+                        </div>
+                          
+                        <div class="form-group col-sm-4">
+                            <label for="fname">First Name</label>
+                            <input type="text" class="form-control" value="${employee.fname}" disabled/>
+                        </div>
+                        
+                        <div class="form-group col-sm-2">
+                           <label for="fname">Middle Name</label>    
+                           <input type="text" class="form-control" value="${employee.mname}" disabled/>
+                        </div>
+                        
+                        <div class="form-group col-sm-4">
+                           <label for="fname">Last Name</label>    
+                           <input type="text" class="form-control" value="${employee.lname}" disabled/>
+                        </div>
+                      </div>     
+                  </div>   
+                  
+                  <div class="col-xs-12">  
+                      <div class="row animated fadeInDown wow" data-wow-delay=".5s">     
+                        <div class="form-group col-sm-6">
+                          <label for="email">Email Address</label>
+                           <input type="text" class="form-control" value="${employee.email}" disabled/>
+                        </div>
+                          
+                        <div class="form-group col-sm-3">
+                            <label for="cno">Contact No</label>
+                            <input type="text" class="form-control" value="${employee.cno}" disabled/>
+                        </div>
+                        
+                        <div class="form-group col-sm-3">
+                            <label for="bdate">Birth Date</label>
+                            <input type="text" class="form-control" value="${employee.bdate}" disabled/>
+                        </div>
+                       
+                  </div>         
+               </c:forEach>
+            </form:form>
+        </div> 
+    </div>   
+  </div>
 </section>
 <!-- END FEATURES-1 -->
 

@@ -67,7 +67,7 @@
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">       
                         <div class="form-group col-sm-6">
                            
-                           <input type="file" class="form-control" name="file">
+                           <input type="file" class="form-control" name="fileName">
                         </div>
                           
                         <div class="form-group col-sm-4">    

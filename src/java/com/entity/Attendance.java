@@ -1,6 +1,7 @@
 
 package com.entity;
 
+import java.io.File;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,8 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table(name = "attendance", schema = "public")
@@ -19,19 +22,20 @@ public class Attendance implements Serializable {
  @GeneratedValue(strategy = GenerationType.AUTO)
  private int id;   
  
- @Column private String fileName;
+ @Transient
+  private MultipartFile fileName;
  
- @Column private byte[] data;
+ 
  
  public Attendance(){
  }
  
- public Attendance(int id, String fileName,byte[] data){
+ public Attendance(int id, MultipartFile fileName){
      
      super();
      this.id=id;
      this.fileName=fileName;
-     this.data=data;
+    
  } 
  
   @Override
@@ -49,21 +53,12 @@ public class Attendance implements Serializable {
     }
     
     
-    public String getFileName() {
+    public MultipartFile getFileName() {
         return fileName;
     }
 
-    public void setFileName(String fileName) {
+    public void setFileName(MultipartFile fileName) {
         this.fileName = fileName;
     }
-    
-    public byte[] getData() {
-        return data;
-    }
-
-    public void setData(byte[] data) {
-        this.data = data;
-    }
-
    
 }

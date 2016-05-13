@@ -8,6 +8,9 @@
 <!DOCTYPE html>
 <html>
     <body>
+        <%
+            String email = (String)session.getAttribute("email");
+        %>
         <div class="navbar navbar-custom sticky navbar-abs" role="navigation">
             <div class="container">
 
@@ -33,7 +36,7 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu arrow">
-                               <li><a href="empdetails.do">View Employee Details</a></li>
+                                <li><a href="empdetails.do?email=<%=email%>">View Employee Details</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -43,9 +46,21 @@
                             </a>
                             <ul class="dropdown-menu arrow">
                                 <li><a href="#">View Daily Attendance</a></li>
-                                <li><a href="#">Leave Management</a></li>
                             </ul>
                         </li>
+                        
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown">
+                                Leave 
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu arrow">
+                                <li><a href="#">Manage Leave Type</a></li>
+                                <li><a href="#">Manage Leave Detail</a></li>
+                                <li><a href="#">Manage Current Used Leave</a></li>
+                            </ul>
+                        </li>
+                        
                         <li class="dropdown">
                             <a href="#" data-toggle="dropdown">
                                 Salary 

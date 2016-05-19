@@ -20,8 +20,8 @@ import org.springframework.ui.ModelMap;
 @Controller
 public class EmployeeController {
     
-    @Autowired
-    private EmployeeDAO employeeDAO;
+@Autowired
+private EmployeeDAO employeeDAO;
     
     int id;
     @RequestMapping("/searchEmployee")

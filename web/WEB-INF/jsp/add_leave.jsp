@@ -1,7 +1,3 @@
-<%-- 
-    Document   : add_employee
-    Author     : akshay
---%>
 
 
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -37,7 +33,7 @@
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <div class="home-wrapper">
-                        <h1 class="animated fadeInDown wow" data-wow-delay=".1s">Employee Attendance</h1>
+                        <h1 class="animated fadeInDown wow" data-wow-delay=".1s">Add Leave Type Details</h1>
                         
                     </div>
                 </div>
@@ -51,32 +47,39 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 text-center">
-                <h1 class="title zoomIn animated wow" data-wow-delay=".1s">Upload Attendance</h1>
+                <h1 class="title zoomIn animated wow" data-wow-delay=".1s">Basic Information</h1>
                 <hr class="hr">
             </div> 
         </div>
 
         <div class="row">
             <div class="col-md-12 text-left">
-                <form:form role="form" name="ajax-form" id="ajax-form" action="UploadServlet.do" 
-                           method="post" class="form-main" commandName="upload_attendance"
-                           enctype="multipart/form-data">
-                  
+                <form:form role="form" name="ajax-form" id="ajax-form" action="saveLeave.do" 
+                           method="post" class="form-main" commandName="leave">
                     <div class="col-xs-12">  
-                        <label for="fname">Upload csv File</label>
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">       
-                        <div class="form-group col-sm-6">
-                           
-                           <input type="file" class="form-control" name="fileName">
-                           Name: <input type="text" name="name"><br /> <br /> 
-                        </div>
-                          
-                        <div class="form-group col-sm-4">    
-                            <input type="submit" class="btn btn-custom" value="Upload"> 
-                        </div>
-                        </div>    
-                    </div>    
+                           <div class="form-group row">
+                               <label for="ltype" class="col-sm-2 form-control-label">Leave Type</label>
+                               <div class="col-sm-10">
+                                   <form:input class="form-control" path="ltype"/>
+                                   <font color="red" family="Comic Sans, Comic Sans MS, cursive">
+                                   <form:errors  path="ltype"></form:errors>
+                                   </font>
+                               </div>    
+                           </div>
+                        
+                        </div> 
+                    </div>
                   
+                    <br><br>
+                    <div class="form-group row">
+                       <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-secondary">Add</button>
+                        <input type="button" value="View Leaves" class="btn btn-info" 
+                                  onclick="javascript:go('viewAllLeaves.do');"/>
+                       </div>
+                    </div>
+                    
                 </form:form>
             </div> 
         </div>   

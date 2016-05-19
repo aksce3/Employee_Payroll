@@ -102,7 +102,7 @@
                         </div>
                             
                         <div class="form-group col-sm-2">
-                           <label for="email">Password</label>
+                           <label for="password">Password</label>
                            <input class="form-control" id="password" name="password" 
                                   type="password" >
                             <font color="red" family="Comic Sans, Comic Sans MS, cursive">
@@ -121,13 +121,13 @@
                             <label for="gender" class="control-label">Gender</label>
                             <div class="btn-group" data-toggle="buttons">
                                 <label class="btn btn-default">
-                                    <input type="radio" name="gender" value="male" /> Male
+                                    <input type="radio" name="gender" value="Male" /> Male
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="gender" value="female" /> Female
+                                    <input type="radio" name="gender" value="Female" /> Female
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="gender" value="other" /> Other
+                                    <input type="radio" name="gender" value="Other" /> Other
                                 </label>
                                 <br>
                                 <font color="red" family="Comic Sans, Comic Sans MS, cursive">
@@ -186,8 +186,8 @@
                                 <label for="mstatus" class="control-label">Marital Status</label>
                                 <select class="form-control bfh-selectbox" id="mstatus" name="mstatus">
                                     <option></option>
-                                    <option value="single">Single</option>
-                                    <option value="married">Married</option>
+                                    <option value="Single">Single</option>
+                                    <option value="Married">Married</option>
                                 </select>
                                 <font color="red" family="Comic Sans, Comic Sans MS, cursive">
                                        <form:errors path="mstatus"></form:errors>
@@ -209,9 +209,10 @@
                                 <label for="bgroup" class="control-label">Blood Group</label>
                                 <select class="form-control bfh-selectbox" id="bgroup" name="bgroup">
                                     <option></option>
-                                    <option value="o+">O+</option>
-                                    <option value="a+">A+</option>
-                                    <option value="b+">B+</option>
+                                    <option value="O">O</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="AB">AB</option>
                                 </select>
                                 
                             </div>
@@ -245,9 +246,14 @@
                                 <label for="designation" class="control-label">Designation</label>
                                 <select class="form-control bfh-selectbox" id="designation" name="designation">
                                     <option></option>
-                                    <option value="developer">Developer</option>
-                                    <option value="accountant">Accountant</option>
-                                    <option value="manager">Manager</option>
+                                    <option value="Trainee Engineer">Trainee Engineer</option>
+                                    <option value="Software Engineer">Software Engineer</option>
+                                    <option value="Programmer Analyst">Programmer Analyst</option>
+                                    <option value="Senior Software Engineer">Senior Software Engineer</option>
+                                    <option value="System Analyst">System Analyst</option>
+                                    <option value="Project Lead">Project Lead</option>
+                                    <option value="Project Manager">Project Manager</option>
+                                    <option value="Program Manager">Program Manager</option>
                                 </select>
                             </div>
 
@@ -255,9 +261,14 @@
                                 <label for="department" class="control-label">Department</label>
                                 <select class="form-control bfh-selectbox" id="department" name="department">
                                     <option></option>
-                                    <option value="CRM">CRM</option>
-                                    <option value="HR">HR</option>
-                                    <option value="DATA">DATA</option>
+                                    <option value="Marketing">Marketing</option>
+                                    <option value="Human Resources">Human Resources</option>
+                                    <option value="Purchasing">Purchasing</option>
+                                    <option value="Sales">Sales</option>
+                                    <option value="IT">IT</option>
+                                    <option value="Quality Assurance">Quality Assurance</option>
+                                    <option value="Customers">Customers</option>
+                                    <option value="Customer Service">Customer Service</option>
                                 </select>
                             </div>
 
@@ -265,8 +276,8 @@
                                 <label for="emptype" class="control-label">Employee Type</label>
                                 <select class="form-control bfh-selectbox" id="emptype" name="emptype">
                                     <option></option>
-                                    <option value="permanent">Permanent</option>
-                                    <option value="temporary">Temporary</option>
+                                    <option value="Permanent">Permanent</option>
+                                    <option value="Temporary">Temporary</option>
                                 </select>
                             </div>
                         </div>
@@ -340,8 +351,8 @@
                                 <label for="salaryslab" class="control-label">Salary Slab</label>
                                 <select class="selectpicker show-tick form-control" id="salaryslab" name="salaryslab">
                                     <option></option>
-                                    <option value="basic salary">Basic Salary</option>
-                                    <option value="gross salary">Gross Salary</option>
+                                    <option value="Basic Salary">Basic Salary</option>
+                                    <option value="Gross Salary">Gross Salary</option>
                                 </select>
                             </div>
                             
@@ -356,8 +367,8 @@
                                 <label for="ptype" class="control-label">Payment Type</label>
                                 <select class="selectpicker show-tick form-control" id="ptype" name="ptype">
                                     <option></option>
-                                    <option value="cash">Cash</option>
-                                    <option value="cheque">Cheque</option>
+                                    <option value="Cash">Cash</option>
+                                    <option value="Cheque">Cheque</option>
                                 </select>
                             </div>
                         </div>   

@@ -29,21 +29,21 @@ public class EmpLoginDAO {
     List result = c.list();
     int size = result.size();
     return  size;
-    
-    
     }
 
     public List<Employee> findByUserEmail(String email) {
-       //Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Employee.class);
-        Session session = this.sessionFactory.getCurrentSession();
-          Criteria c = session.createCriteria(Employee.class);
-    c.add(Restrictions.eq("email",email));
-   // List result = c.list();
-         List<Employee> emp = c.list();
-         System.out.println("In method is  dao: " + emp);
-         
-        //Employee emp =(Employee) sessionFactory.getCurrentSession().get(Employee.class, email);
-        return emp;
+       Session session = this.sessionFactory.getCurrentSession();
+       Criteria c = session.createCriteria(Employee.class);
+       c.add(Restrictions.eq("email",email));
+       List<Employee> emp = c.list();
+       System.out.println("In method is  dao: " + emp);
+       return emp;
+    }
+
+    public void update(Employee employee ){
+        System.out.println("Have Update......"); 
+        System.out.println("Employee Details is : " + employee);
+        sessionFactory.getCurrentSession().merge(employee);
     }
     
 }

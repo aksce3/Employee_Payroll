@@ -1,8 +1,8 @@
-<%-- 
-    Document   : admin.jsp
-    Author     : akshay
---%>
 
+
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
@@ -35,7 +35,11 @@
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <div class="home-wrapper">
-                        <h1 class="animated fadeInDown wow" data-wow-delay=".1s">Employee User</h1>
+                        
+                          <h1 class="animated fadeInDown wow" data-wow-delay=".1s">
+                              Welcome 
+                          </h1>
+                       
                         <h4 class="page-sub-title animated fadeInDown wow" data-wow-delay=".3s">The People behind Iflexion Software solutions</h4>
                     </div>
                 </div>

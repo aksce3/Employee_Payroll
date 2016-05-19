@@ -1,7 +1,3 @@
-<%-- 
-    Document   : add_employee
-    Author     : akshay
---%>
 
 
 <%@page import="java.text.SimpleDateFormat"%>
@@ -65,12 +61,7 @@
             <div class="col-md-12 text-left">
                 <form:form role="form" name="ajax-form" id="ajax-form" action="updateEmployee.do" 
                            method="post" class="form-main" commandName="edit_employee">
-                    
-                    
-                    
-                    
-                        
-                        
+                     
                     <div class="col-xs-12">  
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">   
                             

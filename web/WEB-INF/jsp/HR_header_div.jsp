@@ -65,8 +65,9 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu arrow">
-                                <li><a href="#">Add Leave</a></li>
-                                <li><a href="#">Update Leave</a></li>
+                                <li><a href="add_leave.do">Manage Leave Type</a></li>
+                                <li><a href="add_leave_detail.do">Manage Leave Detail</a></li>
+                                <li><a href="#">Manage Current Used Leave</a></li>
                             </ul>
                         </li>
                         <li>

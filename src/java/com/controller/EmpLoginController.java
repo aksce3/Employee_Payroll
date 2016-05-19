@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -62,7 +63,24 @@ public class EmpLoginController {
                 System.out.println("Employee fetch-----");
 		return mav;
         }
-      
+    
+    @RequestMapping(value = "/updatemainemp",method = RequestMethod.GET)
+    public ModelAndView editemp(@RequestParam(required= false, defaultValue="") String email){
+       ModelAndView mav = new ModelAndView("update_empmain");
+       List <Employee> employee = empLoginDAO.findByUserEmail(email);
+       mav.addObject("update_empmain",employee);
+       return mav;
+    } 
+   
+     @RequestMapping(value = "/updatemainemp",method = RequestMethod.POST)
+    public String updateemp(@ModelAttribute("update_empmain") Employee employee, SessionStatus status){
+                empLoginDAO.update(employee);
+                status.setComplete();
+                System.out.println("Employee controler updated");
+                return "redirect:empdetails.do";
+            
+        
+    }
     @InitBinder
     public void initBinder(WebDataBinder binder) {
         binder.setValidator(new EmpUserValidator());

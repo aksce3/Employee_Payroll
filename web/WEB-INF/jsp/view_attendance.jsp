@@ -9,7 +9,17 @@
         <meta charset="utf-8">
         <%@include file="design_div.jsp" %>
         
-        
+        <script type="text/javascript">
+          $('#accordion1').on('shown.bs.collapse', function () {
+          $("#package1 i.indicator").removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
+         });
+         
+         $('#accordion1').on('hidden.bs.collapse', function () {
+         $("#package1 i.indicator").removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-up");
+        });
+            
+            
+        </script>
        
     </head>
 
@@ -56,12 +66,213 @@
         
          
             
-        <form:form role="form" name="ajax-form" id="ajax-form" action="viewAllEmployees.do" 
-                   method="post" class="form-main" commandName="view_attendance">
-          
+        <form role="form" name="ajax-form" id="ajax-form" action="searchEmployee.do" 
+              method="post" class="form-main">
+           <div class="col-xs-12">  
+                 <label for="fname">Enter Employee Name</label>    
+                     <div class="row animated fadeInDown wow" data-wow-delay=".5s"> 
+                          <div class="form-group col-sm-6">
+                              <input type="text" class="form-control" name="Emp_name">&nbsp;&nbsp;
+                          </div>   
+                        
+                          <div class="form-group col-sm-4">   
+                              <input type="submit" value="Search" class="btn btn-info"/>
+                              <input type="button" value="Back" class="btn btn-info" 
+                                  onclick="javascript:go('viewAllAttendance.do');"/>
+                              <input type="button" value="Upload Attendance" class="btn btn-info" 
+                                  onclick="javascript:go('upload_attendance.do');"/>
+                          </div>   
+                     </div>       
+            </div>
             
-        </form:form>>    
-           
+        </form>    
+            <table data-toggle="table"   id="tableSearchResults" 
+                   class="table table-hover  table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th class="detail" rowspan="2"></th>
+                  
+                    <th data-field="id">
+                        <div class="th-inner sortable both">Employee ID</div>
+                    </th>
+
+                    <th>
+                        <div class="th-inner ">Employee Name</div>
+                    </th>
+
+                    <th>
+                        <div class="th-inner ">Employee Email</div>
+                    </th>
+
+                    <th>
+                        <div class="th-inner ">In_Time</div>
+                    </th>
+                    
+                    <th>
+                        <div class="th-inner ">Out_Time</div>
+                    </th>
+                    
+                    <th>
+                        <div class="th-inner ">Present Date</div>
+                    </th>
+                    <th class="detail"></th>
+                    
+                    <th class="detail"></th>
+                 </tr>
+              
+                 <c:if test="${empty SEARCH_EMPLOYEES_RESULTS_KEY}">
+	           <tr>
+			<td colspan="9">No Results found</td>
+		   </tr>
+	      </c:if>
+               </thead> 
+               
+              
+             
+                <tbody>
+                  <c:if test="${! empty SEARCH_EMPLOYEES_RESULTS_KEY}">
+                    <c:forEach var="employee" items="${SEARCH_EMPLOYEES_RESULTS_KEY}">
+                       <tr id="package1" class="accordion-toggle" data-toggle="collapse" 
+                            data-parent="#OrderPackages" data-target="#${employee.id}">
+                           
+                           <td>
+                               <i class="indicator glyphicon glyphicon-chevron-up pull-right"></i>
+                           </td>
+                        
+                           <td style="text-align: center; ">
+                               ${employee.id}
+                           </td>
+                        
+                           <td style="text-align: center; ">
+                              ${employee.fname}
+                           </td>
+                        
+                           <td style="text-align: center; ">
+                              ${employee.mname}
+                           </td>
+                        
+                           <td style="text-align: center; ">
+                             ${employee.lname}
+                           </td>
+                          
+                        
+                          <td style="text-align: center; ">
+                              <a href="updateEmployee.do?id=${employee.id}">
+                                  <input type="button" class="btn btn-info" value="Edit">
+                              </a> 
+                                  
+                               
+                          </td>
+                           <td style="text-align: center; ">
+                               <a href="delete_employee.do?id=${employee.id}">
+                                  <input type="button" value="Delete" class="btn btn-info">
+                               </a>
+                           </td>
+                          
+                           
+                      </tr> 
+                      
+                      
+                      
+                    <tr>
+                       <td colspan="7" class="hiddenRow">
+                           <div class="accordion-body collapse packageDetails1" id="${employee.id}">
+                             <p><b> <font color="blue">Full Name:</font></b> 
+                                ${employee.fname} ${employee.mname} ${employee.lname} 
+                             </p>
+                                 
+                             <p><b> <font color="blue">Email Address:</font></b> 
+                                 ${employee.email} 
+                             </p>
+                             
+                             <p><b> <font color="blue">Contact No:</font></b> 
+                                 ${employee.cno}  
+                             </p>
+                             
+                             <p><b> <font color="blue">Gender:</font></b> 
+                                 ${employee.gender}  
+                             </p>
+                             
+                             <p><b> <font color="blue">Pincode:</font></b> 
+                                 ${employee.pincode}  
+                             </p>
+                             
+                             <p><b> <font color="blue">Address:</font></b> 
+                                 ${employee.address}  
+                             </p>
+                                 
+                             <p><b> <font color="blue">Country:</font></b> 
+                                 ${employee.country}
+                             </p>
+                             
+                             <p><b> <font color="blue">State:</font></b> 
+                                 ${employee.state}  
+                             </p>
+                             
+                             <p><b> <font color="blue">Marital Status:</font></b> 
+                                 ${employee.mstatus}  
+                             </p>
+                             
+                             <p><b> <font color="blue">Blood Group:</font></b> 
+                                 ${employee.bgroup}  
+                             </p>
+                             
+                             <p><b> <font color="blue">Designation:</font></b> 
+                                 ${employee.designation}
+                             </p>
+                             
+                             <p><b> <font color="blue">Department:</font></b> 
+                                 ${employee.department}  
+                             </p>
+                             
+                             <p><b> <font color="blue">Employee Type:</font></b> 
+                                 ${employee.emptype}   
+                             </p>
+                             
+                             <p><b> <font color="blue">Pan Card No:</font></b> 
+                                 ${employee.panno}  
+                             </p>
+                             
+                             <p><b> <font color="blue">PF:</font></b> 
+                                 ${employee.pf}   
+                             </p>
+                             
+                             <p><b> <font color="blue">Bank Name:</font></b> 
+                                 ${employee.bname}   
+                             </p>
+                             
+                             <p><b> <font color="blue">Account No:</font></b> 
+                                 ${employee.acno}   
+                             </p>
+                             
+                             <p><b> <font color="blue">Salary Slab:</font></b> 
+                                 ${employee.salaryslab}   
+                             </p>
+                             
+                             <p><b> <font color="blue">Salary:</font></b> 
+                                 ${employee.salary}   
+                             </p>
+                             
+                              <p><b> <font color="blue">Payment Type:</font></b> 
+                                 ${employee.ptype}   
+                             </p>
+                        </div>   
+                       </td>       
+                    </tr>
+                    
+                      </c:forEach>
+                  </c:if>
+                    </tbody>
+             
+                    
+                        
+                    
+                    
+                    
+                
+            </table>
+             
+             
            
     </div>
 </section>

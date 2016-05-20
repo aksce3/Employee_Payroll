@@ -25,6 +25,7 @@ public class Attendance implements Serializable {
  private int Emp_id;   
  
  @Column private String Emp_name;
+ @Column private String Emp_email;
  @Column private String In_time;
  @Column private String Out_time;
  @Column private String P_date;
@@ -37,12 +38,13 @@ public class Attendance implements Serializable {
  public Attendance(){
  }
  
- public Attendance(int Emp_id, MultipartFile fileName, String Emp_name, String In_time, String Out_time, String P_date){
+ public Attendance(int Emp_id, MultipartFile fileName, String Emp_name,String Emp_email, String In_time, String Out_time, String P_date){
      
      super();
      this.Emp_id=Emp_id;
      this.fileName=fileName;
      this.Emp_name=Emp_name;
+     this.Emp_email=Emp_email;
      this.In_time=In_time;
      this.Out_time=Out_time;
      this.P_date=P_date;
@@ -77,48 +79,40 @@ public class Attendance implements Serializable {
     public void setEmp_name(String Emp_name) {
         this.Emp_name = Emp_name;
     }
+    
+    public String getEmp_email() {
+        return Emp_email;
+    }
 
-    /**
-     * @return the In_time
-     */
+    public void setEmp_email(String Emp_email) {
+        this.Emp_email = Emp_email;
+    }
+
+    
     public String getIn_time() {
         return In_time;
     }
 
-    /**
-     * @param In_time the In_time to set
-     */
     public void setIn_time(String In_time) {
         this.In_time = In_time;
     }
 
-    /**
-     * @return the Out_time
-     */
     public String getOut_time() {
         return Out_time;
     }
 
-    /**
-     * @param Out_time the Out_time to set
-     */
     public void setOut_time(String Out_time) {
         this.Out_time = Out_time;
     }
 
-    /**
-     * @return the P_date
-     */
     public String getP_date() {
         return P_date;
     }
 
-    /**
-     * @param P_date the P_date to set
-     */
     public void setP_date(String P_date) {
         this.P_date = P_date;
     }
 
+   
       
 }

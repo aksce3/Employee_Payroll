@@ -20,7 +20,7 @@ public class AttendanceDAO {
    @Autowired
    private SessionFactory sessionFactory;
     
-   public Attendance getByAll(int Emp_id, String Emp_name, Time In_time, Time Out_time, Date P_date){
+   public Attendance getByAll(int Emp_id, String Emp_name, String Emp_email, Time In_time, Time Out_time, Date P_date){
        return (Attendance) sessionFactory.getCurrentSession().get(Attendance.class, Emp_id); 
        
    }
@@ -32,6 +32,7 @@ public class AttendanceDAO {
        Vector v = ExcelRead.read(fileName);
        String emp_id = null;
        String Emp_name = null;
+       String Emp_email = null;
        String In_time = null;
        String Out_time = null;
        String P_date = null;
@@ -59,13 +60,14 @@ public class AttendanceDAO {
           }*/
            emp_id= cellStoreVector.get(0).toString();
            Emp_name= cellStoreVector.get(1).toString();
-           
-           In_time = cellStoreVector.get(2).toString();
-           Out_time = cellStoreVector.get(3).toString();
-           P_date = cellStoreVector.get(4).toString();
+           Emp_email= cellStoreVector.get(2).toString();
+           In_time = cellStoreVector.get(3).toString();
+           Out_time = cellStoreVector.get(4).toString();
+           P_date = cellStoreVector.get(5).toString();
            
           atd.setEmp_id((int)(Float.parseFloat(emp_id)));
           atd.setEmp_name(Emp_name);
+          atd.setEmp_email(Emp_email);
           atd.setIn_time(In_time);
           atd.setOut_time(Out_time);
           atd.setP_date(P_date);

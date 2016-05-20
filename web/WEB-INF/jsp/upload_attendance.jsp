@@ -63,13 +63,17 @@
                            enctype="multipart/form-data">
                   
                     <div class="col-xs-12">  
-                        <label for="fname">Upload csv File</label>
+                        
                         <div class="row animated fadeInDown wow" data-wow-delay=".5s">       
                         <div class="form-group col-sm-6">
-                           
-                           <input type="file" class="form-control" name="fileName">
-                           Name: <input type="text" name="name"><br /> <br /> 
+                             <label for="fname">Upload Excel File</label>
+                             <input type="file" class="form-control" name="fileName">
                         </div>
+                     
+                        <div class="form-group col-sm-4">
+                            <label for="name">File Name</label>
+                            <input type="text" name="name" class="form-control">      
+                        </div>    
                           
                         <div class="form-group col-sm-4">    
                             <input type="submit" class="btn btn-custom" value="Upload"> 
